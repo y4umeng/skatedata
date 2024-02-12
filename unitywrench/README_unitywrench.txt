@@ -15,3 +15,7 @@ The following resources were found to be usefull references for this project
 
 YouTube videos (in order of viewing):
 https://www.youtube.com/watch?v=P5pgdnjrJ1c
+
+
+Nexus links:
+https://wiki.nexusmods.com/index.php/Unity_modding_tools
