@@ -1,4 +1,6 @@
 using System;
+using System.IO;
+using System.Text;
 using SkaterXL.Core;
 using UnityEngine;
 
@@ -9,7 +11,7 @@ namespace SkaterXL.Gameplay
 	public struct BoardData
 	{
 		// Token: 0x170000E6 RID: 230
-		// (get) Token: 0x060003EA RID: 1002 RVA: 0x00020694 File Offset: 0x0001E894
+		// (get) Token: 0x060003EA RID: 1002
 		public static BoardData Default
 		{
 			get
@@ -32,7 +34,7 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x170000E7 RID: 231
-		// (get) Token: 0x060003EB RID: 1003 RVA: 0x00020729 File Offset: 0x0001E929
+		// (get) Token: 0x060003EB RID: 1003
 		public Vector3 TailCenter
 		{
 			get
@@ -42,7 +44,7 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x170000E8 RID: 232
-		// (get) Token: 0x060003EC RID: 1004 RVA: 0x0002074A File Offset: 0x0001E94A
+		// (get) Token: 0x060003EC RID: 1004
 		public Vector3 NoseCenter
 		{
 			get
@@ -52,7 +54,7 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x170000E9 RID: 233
-		// (get) Token: 0x060003ED RID: 1005 RVA: 0x0002076C File Offset: 0x0001E96C
+		// (get) Token: 0x060003ED RID: 1005
 		public Vector3 adjustedAcceleration
 		{
 			get
@@ -65,7 +67,7 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x170000EA RID: 234
-		// (get) Token: 0x060003EE RID: 1006 RVA: 0x000207C8 File Offset: 0x0001E9C8
+		// (get) Token: 0x060003EE RID: 1006
 		public float adjustedLocalXAccel
 		{
 			get
@@ -75,7 +77,7 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x170000EB RID: 235
-		// (get) Token: 0x060003EF RID: 1007 RVA: 0x000207E0 File Offset: 0x0001E9E0
+		// (get) Token: 0x060003EF RID: 1007
 		public float localXAccel
 		{
 			get
@@ -85,7 +87,7 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x170000EC RID: 236
-		// (get) Token: 0x060003F0 RID: 1008 RVA: 0x000207F8 File Offset: 0x0001E9F8
+		// (get) Token: 0x060003F0 RID: 1008
 		public bool AutoRevert
 		{
 			get
@@ -95,7 +97,7 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x170000ED RID: 237
-		// (get) Token: 0x060003F1 RID: 1009 RVA: 0x00020805 File Offset: 0x0001EA05
+		// (get) Token: 0x060003F1 RID: 1009
 		public bool AutoPump
 		{
 			get
@@ -105,7 +107,7 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x170000EE RID: 238
-		// (get) Token: 0x060003F2 RID: 1010 RVA: 0x00020814 File Offset: 0x0001EA14
+		// (get) Token: 0x060003F2 RID: 1010
 		public Vector3 boardLocalGrindContactPoint
 		{
 			get
@@ -115,7 +117,7 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x170000EF RID: 239
-		// (get) Token: 0x060003F3 RID: 1011 RVA: 0x00020858 File Offset: 0x0001EA58
+		// (get) Token: 0x060003F3 RID: 1011
 		public Vector3 backTruckLocalGrindContactPoint
 		{
 			get
@@ -125,7 +127,7 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x170000F0 RID: 240
-		// (get) Token: 0x060003F4 RID: 1012 RVA: 0x0002089C File Offset: 0x0001EA9C
+		// (get) Token: 0x060003F4 RID: 1012
 		public Vector3 frontTruckLocalGrindContactPoint
 		{
 			get
@@ -135,7 +137,7 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x170000F1 RID: 241
-		// (get) Token: 0x060003F5 RID: 1013 RVA: 0x000208DD File Offset: 0x0001EADD
+		// (get) Token: 0x060003F5 RID: 1013
 		public bool BoardColliding
 		{
 			get
@@ -145,7 +147,7 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x170000F2 RID: 242
-		// (get) Token: 0x060003F6 RID: 1014 RVA: 0x000208EA File Offset: 0x0001EAEA
+		// (get) Token: 0x060003F6 RID: 1014
 		public bool BackTruckColliding
 		{
 			get
@@ -155,7 +157,7 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x170000F3 RID: 243
-		// (get) Token: 0x060003F7 RID: 1015 RVA: 0x000208F7 File Offset: 0x0001EAF7
+		// (get) Token: 0x060003F7 RID: 1015
 		public bool FrontTruckColliding
 		{
 			get
@@ -165,7 +167,7 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x170000F4 RID: 244
-		// (get) Token: 0x060003F8 RID: 1016 RVA: 0x00020904 File Offset: 0x0001EB04
+		// (get) Token: 0x060003F8 RID: 1016
 		public bool Colliding
 		{
 			get
@@ -175,7 +177,7 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x170000F5 RID: 245
-		// (get) Token: 0x060003F9 RID: 1017 RVA: 0x0002091E File Offset: 0x0001EB1E
+		// (get) Token: 0x060003F9 RID: 1017
 		public bool BoardCollisionEnter
 		{
 			get
@@ -185,7 +187,7 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x170000F6 RID: 246
-		// (get) Token: 0x060003FA RID: 1018 RVA: 0x0002092B File Offset: 0x0001EB2B
+		// (get) Token: 0x060003FA RID: 1018
 		public bool BackTruckCollisionEnter
 		{
 			get
@@ -195,7 +197,7 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x170000F7 RID: 247
-		// (get) Token: 0x060003FB RID: 1019 RVA: 0x00020938 File Offset: 0x0001EB38
+		// (get) Token: 0x060003FB RID: 1019
 		public bool FrontTruckCollisionEnter
 		{
 			get
@@ -205,7 +207,7 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x170000F8 RID: 248
-		// (get) Token: 0x060003FC RID: 1020 RVA: 0x00020945 File Offset: 0x0001EB45
+		// (get) Token: 0x060003FC RID: 1020
 		public bool CollisionEnter
 		{
 			get
@@ -215,7 +217,7 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x170000F9 RID: 249
-		// (get) Token: 0x060003FD RID: 1021 RVA: 0x0002095F File Offset: 0x0001EB5F
+		// (get) Token: 0x060003FD RID: 1021
 		public Vector3 backTruckWorldCenterOfMass
 		{
 			get
@@ -225,7 +227,7 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x170000FA RID: 250
-		// (get) Token: 0x060003FE RID: 1022 RVA: 0x00020971 File Offset: 0x0001EB71
+		// (get) Token: 0x060003FE RID: 1022
 		public Vector3 frontTruckWorldCenterOfMass
 		{
 			get
@@ -235,7 +237,7 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x170000FB RID: 251
-		// (get) Token: 0x060003FF RID: 1023 RVA: 0x00020983 File Offset: 0x0001EB83
+		// (get) Token: 0x060003FF RID: 1023
 		public Quaternion rotation
 		{
 			get
@@ -244,7 +246,7 @@ namespace SkaterXL.Gameplay
 			}
 		}
 
-		// Token: 0x06000400 RID: 1024 RVA: 0x00020991 File Offset: 0x0001EB91
+		// Token: 0x06000400 RID: 1024
 		public Quaternion GetRotation(bool isBackwards)
 		{
 			if (!isBackwards)
@@ -255,7 +257,7 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x170000FC RID: 252
-		// (get) Token: 0x06000401 RID: 1025 RVA: 0x000209C6 File Offset: 0x0001EBC6
+		// (get) Token: 0x06000401 RID: 1025
 		public Vector3 forward
 		{
 			get
@@ -269,7 +271,7 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x170000FD RID: 253
-		// (get) Token: 0x06000402 RID: 1026 RVA: 0x000209EC File Offset: 0x0001EBEC
+		// (get) Token: 0x06000402 RID: 1026
 		public Vector3 right
 		{
 			get
@@ -282,7 +284,7 @@ namespace SkaterXL.Gameplay
 			}
 		}
 
-		// Token: 0x06000403 RID: 1027 RVA: 0x00020A12 File Offset: 0x0001EC12
+		// Token: 0x06000403 RID: 1027
 		public Vector3 GetClosestBoardForwardToVelocity()
 		{
 			if (Vector3.Dot(this.boardRigidbody.forward, this.boardRigidbody.velocity) >= 0f)
@@ -293,19 +295,19 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x170000FE RID: 254
-		// (get) Token: 0x06000404 RID: 1028 RVA: 0x00020A54 File Offset: 0x0001EC54
+		// (get) Token: 0x06000404 RID: 1028
 		public float xzRot
 		{
 			get
 			{
-				float num = Mathd.RepeatSignedAngle(this.boardRigidbody.rotation.eulerAngles.x);
+				float num3 = Mathd.RepeatSignedAngle(this.boardRigidbody.rotation.eulerAngles.x);
 				float num2 = Mathd.AngleBetween(this.CatchZAngle, this.boardRigidbody.rotation.eulerAngles.z);
-				return Mathf.Sqrt(num * num + num2 * num2);
+				return Mathf.Sqrt(num3 * num3 + num2 * num2);
 			}
 		}
 
 		// Token: 0x170000FF RID: 255
-		// (get) Token: 0x06000405 RID: 1029 RVA: 0x00020AAD File Offset: 0x0001ECAD
+		// (get) Token: 0x06000405 RID: 1029
 		public bool PrevAllWheelsDown
 		{
 			get
@@ -315,7 +317,7 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x17000100 RID: 256
-		// (get) Token: 0x06000406 RID: 1030 RVA: 0x00020ACF File Offset: 0x0001ECCF
+		// (get) Token: 0x06000406 RID: 1030
 		public bool PrevAnyWheelDown
 		{
 			get
@@ -325,7 +327,7 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x17000101 RID: 257
-		// (get) Token: 0x06000407 RID: 1031 RVA: 0x00020AF1 File Offset: 0x0001ECF1
+		// (get) Token: 0x06000407 RID: 1031
 		public bool PrevTwoWheelsDown
 		{
 			get
@@ -335,7 +337,7 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x17000102 RID: 258
-		// (get) Token: 0x06000408 RID: 1032 RVA: 0x00020B15 File Offset: 0x0001ED15
+		// (get) Token: 0x06000408 RID: 1032
 		public bool PrevFrontWheelsDown
 		{
 			get
@@ -349,7 +351,7 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x17000103 RID: 259
-		// (get) Token: 0x06000409 RID: 1033 RVA: 0x00020B40 File Offset: 0x0001ED40
+		// (get) Token: 0x06000409 RID: 1033
 		public bool PrevBackWheelsDown
 		{
 			get
@@ -363,7 +365,7 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x17000104 RID: 260
-		// (get) Token: 0x0600040A RID: 1034 RVA: 0x00020B6B File Offset: 0x0001ED6B
+		// (get) Token: 0x0600040A RID: 1034
 		public int WheelDownCount
 		{
 			get
@@ -373,7 +375,7 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x17000105 RID: 261
-		// (get) Token: 0x0600040B RID: 1035 RVA: 0x00020BA0 File Offset: 0x0001EDA0
+		// (get) Token: 0x0600040B RID: 1035
 		public bool AllWheelsDown
 		{
 			get
@@ -383,7 +385,7 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x17000106 RID: 262
-		// (get) Token: 0x0600040C RID: 1036 RVA: 0x00020BC2 File Offset: 0x0001EDC2
+		// (get) Token: 0x0600040C RID: 1036
 		public bool AnyWheelDown
 		{
 			get
@@ -393,7 +395,7 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x17000107 RID: 263
-		// (get) Token: 0x0600040D RID: 1037 RVA: 0x00020BE4 File Offset: 0x0001EDE4
+		// (get) Token: 0x0600040D RID: 1037
 		public bool TwoWheelsDown
 		{
 			get
@@ -403,7 +405,7 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x17000108 RID: 264
-		// (get) Token: 0x0600040E RID: 1038 RVA: 0x00020C08 File Offset: 0x0001EE08
+		// (get) Token: 0x0600040E RID: 1038
 		public bool AnyFrontWheelDown
 		{
 			get
@@ -417,7 +419,7 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x17000109 RID: 265
-		// (get) Token: 0x0600040F RID: 1039 RVA: 0x00020C33 File Offset: 0x0001EE33
+		// (get) Token: 0x0600040F RID: 1039
 		public bool AnyBackWheelDown
 		{
 			get
@@ -431,7 +433,7 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x1700010A RID: 266
-		// (get) Token: 0x06000410 RID: 1040 RVA: 0x00020C5E File Offset: 0x0001EE5E
+		// (get) Token: 0x06000410 RID: 1040
 		public bool FrontWheelsDown
 		{
 			get
@@ -445,7 +447,7 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x1700010B RID: 267
-		// (get) Token: 0x06000411 RID: 1041 RVA: 0x00020C89 File Offset: 0x0001EE89
+		// (get) Token: 0x06000411 RID: 1041
 		public bool BackWheelsDown
 		{
 			get
@@ -459,7 +461,7 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x1700010C RID: 268
-		// (get) Token: 0x06000412 RID: 1042 RVA: 0x00020CB4 File Offset: 0x0001EEB4
+		// (get) Token: 0x06000412 RID: 1042
 		public bool FirstWheelDown
 		{
 			get
@@ -469,7 +471,7 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x1700010D RID: 269
-		// (get) Token: 0x06000413 RID: 1043 RVA: 0x00020CC9 File Offset: 0x0001EEC9
+		// (get) Token: 0x06000413 RID: 1043
 		public bool IsGrounded
 		{
 			get
@@ -479,7 +481,7 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x1700010E RID: 270
-		// (get) Token: 0x06000414 RID: 1044 RVA: 0x00020CF3 File Offset: 0x0001EEF3
+		// (get) Token: 0x06000414 RID: 1044
 		public bool PrevGrounded
 		{
 			get
@@ -489,8 +491,8 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x1700010F RID: 271
-		// (get) Token: 0x06000415 RID: 1045 RVA: 0x00020CFB File Offset: 0x0001EEFB
-		// (set) Token: 0x06000416 RID: 1046 RVA: 0x00020D03 File Offset: 0x0001EF03
+		// (get) Token: 0x06000415 RID: 1045
+		// (set) Token: 0x06000416 RID: 1046
 		public Vector3 AnimBoardTargetPosition
 		{
 			get
@@ -504,8 +506,8 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x17000110 RID: 272
-		// (get) Token: 0x06000417 RID: 1047 RVA: 0x00020D0C File Offset: 0x0001EF0C
-		// (set) Token: 0x06000418 RID: 1048 RVA: 0x00020D14 File Offset: 0x0001EF14
+		// (get) Token: 0x06000417 RID: 1047
+		// (set) Token: 0x06000418 RID: 1048
 		public Quaternion AnimBoardTargetRotation
 		{
 			get
@@ -519,8 +521,8 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x17000111 RID: 273
-		// (get) Token: 0x06000419 RID: 1049 RVA: 0x00020D1D File Offset: 0x0001EF1D
-		// (set) Token: 0x0600041A RID: 1050 RVA: 0x00020D25 File Offset: 0x0001EF25
+		// (get) Token: 0x06000419 RID: 1049
+		// (set) Token: 0x0600041A RID: 1050
 		public Vector3 BoardControlLocalPosition
 		{
 			get
@@ -534,8 +536,8 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x17000112 RID: 274
-		// (get) Token: 0x0600041B RID: 1051 RVA: 0x00020D2E File Offset: 0x0001EF2E
-		// (set) Token: 0x0600041C RID: 1052 RVA: 0x00020D36 File Offset: 0x0001EF36
+		// (get) Token: 0x0600041B RID: 1051
+		// (set) Token: 0x0600041C RID: 1052
 		public Quaternion BoardControlLocalRotation
 		{
 			get
@@ -549,8 +551,8 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x17000113 RID: 275
-		// (get) Token: 0x0600041D RID: 1053 RVA: 0x00020D3F File Offset: 0x0001EF3F
-		// (set) Token: 0x0600041E RID: 1054 RVA: 0x00020D47 File Offset: 0x0001EF47
+		// (get) Token: 0x0600041D RID: 1053
+		// (set) Token: 0x0600041E RID: 1054
 		public float CatchZAngle
 		{
 			get
@@ -564,8 +566,8 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x17000114 RID: 276
-		// (get) Token: 0x0600041F RID: 1055 RVA: 0x00020D50 File Offset: 0x0001EF50
-		// (set) Token: 0x06000420 RID: 1056 RVA: 0x00020D58 File Offset: 0x0001EF58
+		// (get) Token: 0x0600041F RID: 1055
+		// (set) Token: 0x06000420 RID: 1056
 		public Quaternion CatchLocalRotation
 		{
 			get
@@ -579,8 +581,8 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x17000115 RID: 277
-		// (get) Token: 0x06000421 RID: 1057 RVA: 0x00020D61 File Offset: 0x0001EF61
-		// (set) Token: 0x06000422 RID: 1058 RVA: 0x00020D69 File Offset: 0x0001EF69
+		// (get) Token: 0x06000421 RID: 1057
+		// (set) Token: 0x06000422 RID: 1058
 		public Quaternion CatchForwardLocalRotation
 		{
 			get
@@ -594,8 +596,8 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x17000116 RID: 278
-		// (get) Token: 0x06000423 RID: 1059 RVA: 0x00020D72 File Offset: 0x0001EF72
-		// (set) Token: 0x06000424 RID: 1060 RVA: 0x00020D7A File Offset: 0x0001EF7A
+		// (get) Token: 0x06000423 RID: 1059
+		// (set) Token: 0x06000424 RID: 1060
 		public FrictionType FrictionType
 		{
 			get
@@ -609,8 +611,8 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x17000117 RID: 279
-		// (get) Token: 0x06000425 RID: 1061 RVA: 0x00020D83 File Offset: 0x0001EF83
-		// (set) Token: 0x06000426 RID: 1062 RVA: 0x00020D8B File Offset: 0x0001EF8B
+		// (get) Token: 0x06000425 RID: 1061
+		// (set) Token: 0x06000426 RID: 1062
 		public bool IsBackwards
 		{
 			get
@@ -624,8 +626,8 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x17000118 RID: 280
-		// (get) Token: 0x06000427 RID: 1063 RVA: 0x00020D94 File Offset: 0x0001EF94
-		// (set) Token: 0x06000428 RID: 1064 RVA: 0x00020D9C File Offset: 0x0001EF9C
+		// (get) Token: 0x06000427 RID: 1063
+		// (set) Token: 0x06000428 RID: 1064
 		public bool FrozenAfterRespawn
 		{
 			get
@@ -639,8 +641,8 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x17000119 RID: 281
-		// (get) Token: 0x06000429 RID: 1065 RVA: 0x00020DA5 File Offset: 0x0001EFA5
-		// (set) Token: 0x0600042A RID: 1066 RVA: 0x00020DAD File Offset: 0x0001EFAD
+		// (get) Token: 0x06000429 RID: 1065
+		// (set) Token: 0x0600042A RID: 1066
 		public float CurrentPushForce
 		{
 			get
@@ -654,8 +656,8 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x1700011A RID: 282
-		// (get) Token: 0x0600042B RID: 1067 RVA: 0x00020DB6 File Offset: 0x0001EFB6
-		// (set) Token: 0x0600042C RID: 1068 RVA: 0x00020DBE File Offset: 0x0001EFBE
+		// (get) Token: 0x0600042B RID: 1067
+		// (set) Token: 0x0600042C RID: 1068
 		public float WheelRollSpeed
 		{
 			get
@@ -669,8 +671,8 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x1700011B RID: 283
-		// (get) Token: 0x0600042D RID: 1069 RVA: 0x00020DC7 File Offset: 0x0001EFC7
-		// (set) Token: 0x0600042E RID: 1070 RVA: 0x00020DCF File Offset: 0x0001EFCF
+		// (get) Token: 0x0600042D RID: 1069
+		// (set) Token: 0x0600042E RID: 1070
 		public float WheelRPS
 		{
 			get
@@ -684,8 +686,8 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x1700011C RID: 284
-		// (get) Token: 0x0600042F RID: 1071 RVA: 0x00020DD8 File Offset: 0x0001EFD8
-		// (set) Token: 0x06000430 RID: 1072 RVA: 0x00020DE0 File Offset: 0x0001EFE0
+		// (get) Token: 0x0600042F RID: 1071
+		// (set) Token: 0x06000430 RID: 1072
 		public bool FlipTriggered
 		{
 			get
@@ -699,8 +701,8 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x1700011D RID: 285
-		// (get) Token: 0x06000431 RID: 1073 RVA: 0x00020DE9 File Offset: 0x0001EFE9
-		// (set) Token: 0x06000432 RID: 1074 RVA: 0x00020DF1 File Offset: 0x0001EFF1
+		// (get) Token: 0x06000431 RID: 1073
+		// (set) Token: 0x06000432 RID: 1074
 		public bool FlipCollidersEnabled
 		{
 			get
@@ -714,8 +716,8 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x1700011E RID: 286
-		// (get) Token: 0x06000433 RID: 1075 RVA: 0x00020DFA File Offset: 0x0001EFFA
-		// (set) Token: 0x06000434 RID: 1076 RVA: 0x00020E02 File Offset: 0x0001F002
+		// (get) Token: 0x06000433 RID: 1075
+		// (set) Token: 0x06000434 RID: 1076
 		public bool FlipTriggerEnabled
 		{
 			get
@@ -729,8 +731,8 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x1700011F RID: 287
-		// (get) Token: 0x06000435 RID: 1077 RVA: 0x00020E0B File Offset: 0x0001F00B
-		// (set) Token: 0x06000436 RID: 1078 RVA: 0x00020E13 File Offset: 0x0001F013
+		// (get) Token: 0x06000435 RID: 1077
+		// (set) Token: 0x06000436 RID: 1078
 		public bool RemovingTorque
 		{
 			get
@@ -744,8 +746,8 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x17000120 RID: 288
-		// (get) Token: 0x06000437 RID: 1079 RVA: 0x00020E1C File Offset: 0x0001F01C
-		// (set) Token: 0x06000438 RID: 1080 RVA: 0x00020E24 File Offset: 0x0001F024
+		// (get) Token: 0x06000437 RID: 1079
+		// (set) Token: 0x06000438 RID: 1080
 		public Quaternion CurrentRotationTarget
 		{
 			get
@@ -759,8 +761,8 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x17000121 RID: 289
-		// (get) Token: 0x06000439 RID: 1081 RVA: 0x00020E2D File Offset: 0x0001F02D
-		// (set) Token: 0x0600043A RID: 1082 RVA: 0x00020E35 File Offset: 0x0001F035
+		// (get) Token: 0x06000439 RID: 1081
+		// (set) Token: 0x0600043A RID: 1082
 		public Vector3 CurrentPositionTarget
 		{
 			get
@@ -774,8 +776,8 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x17000122 RID: 290
-		// (get) Token: 0x0600043B RID: 1083 RVA: 0x00020E3E File Offset: 0x0001F03E
-		// (set) Token: 0x0600043C RID: 1084 RVA: 0x00020E46 File Offset: 0x0001F046
+		// (get) Token: 0x0600043B RID: 1083
+		// (set) Token: 0x0600043C RID: 1084
 		public Quaternion LastPIDTarget
 		{
 			get
@@ -789,8 +791,8 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x17000123 RID: 291
-		// (get) Token: 0x0600043D RID: 1085 RVA: 0x00020E4F File Offset: 0x0001F04F
-		// (set) Token: 0x0600043E RID: 1086 RVA: 0x00020E57 File Offset: 0x0001F057
+		// (get) Token: 0x0600043D RID: 1085
+		// (set) Token: 0x0600043E RID: 1086
 		public bool CenterOfMassChanged
 		{
 			get
@@ -804,8 +806,8 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x17000124 RID: 292
-		// (get) Token: 0x0600043F RID: 1087 RVA: 0x00020E60 File Offset: 0x0001F060
-		// (set) Token: 0x06000440 RID: 1088 RVA: 0x00020E68 File Offset: 0x0001F068
+		// (get) Token: 0x0600043F RID: 1087
+		// (set) Token: 0x06000440 RID: 1088
 		public Vector3 LastFrameAnimBoardTargetPos
 		{
 			get
@@ -819,8 +821,8 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x17000125 RID: 293
-		// (get) Token: 0x06000441 RID: 1089 RVA: 0x00020E71 File Offset: 0x0001F071
-		// (set) Token: 0x06000442 RID: 1090 RVA: 0x00020E79 File Offset: 0x0001F079
+		// (get) Token: 0x06000441 RID: 1089
+		// (set) Token: 0x06000442 RID: 1090
 		public Vector3 AnimBoardTargetVel
 		{
 			get
@@ -834,8 +836,8 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x17000126 RID: 294
-		// (get) Token: 0x06000443 RID: 1091 RVA: 0x00020E82 File Offset: 0x0001F082
-		// (set) Token: 0x06000444 RID: 1092 RVA: 0x00020E8A File Offset: 0x0001F08A
+		// (get) Token: 0x06000443 RID: 1091
+		// (set) Token: 0x06000444 RID: 1092
 		public Vector3 GroundNormal
 		{
 			get
@@ -849,8 +851,8 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x17000127 RID: 295
-		// (get) Token: 0x06000445 RID: 1093 RVA: 0x00020E93 File Offset: 0x0001F093
-		// (set) Token: 0x06000446 RID: 1094 RVA: 0x00020E9B File Offset: 0x0001F09B
+		// (get) Token: 0x06000445 RID: 1093
+		// (set) Token: 0x06000446 RID: 1094
 		public Vector3 GroundPoint
 		{
 			get
@@ -864,8 +866,8 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x17000128 RID: 296
-		// (get) Token: 0x06000447 RID: 1095 RVA: 0x00020EA4 File Offset: 0x0001F0A4
-		// (set) Token: 0x06000448 RID: 1096 RVA: 0x00020EAC File Offset: 0x0001F0AC
+		// (get) Token: 0x06000447 RID: 1095
+		// (set) Token: 0x06000448 RID: 1096
 		public Vector3 PrevGroundNormal
 		{
 			get
@@ -879,8 +881,8 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x17000129 RID: 297
-		// (get) Token: 0x06000449 RID: 1097 RVA: 0x00020EB5 File Offset: 0x0001F0B5
-		// (set) Token: 0x0600044A RID: 1098 RVA: 0x00020EBD File Offset: 0x0001F0BD
+		// (get) Token: 0x06000449 RID: 1097
+		// (set) Token: 0x0600044A RID: 1098
 		public Vector3 LerpedGroundNormal
 		{
 			get
@@ -894,8 +896,8 @@ namespace SkaterXL.Gameplay
 		}
 
 		// Token: 0x1700012A RID: 298
-		// (get) Token: 0x0600044B RID: 1099 RVA: 0x00020EC6 File Offset: 0x0001F0C6
-		// (set) Token: 0x0600044C RID: 1100 RVA: 0x00020ECE File Offset: 0x0001F0CE
+		// (get) Token: 0x0600044B RID: 1099
+		// (set) Token: 0x0600044C RID: 1100
 		public float GroundY
 		{
 			get
@@ -908,13 +910,13 @@ namespace SkaterXL.Gameplay
 			}
 		}
 
-		// Token: 0x0600044D RID: 1101 RVA: 0x00020ED7 File Offset: 0x0001F0D7
+		// Token: 0x0600044D RID: 1101
 		public override string ToString()
 		{
 			return this.boardRigidbody.ToString();
 		}
 
-		// Token: 0x0600044E RID: 1102 RVA: 0x00020EEC File Offset: 0x0001F0EC
+		// Token: 0x0600044E RID: 1102
 		public void Transform(Vector3 origPoint, Vector3 newPoint, Quaternion rotationAroundPoint)
 		{
 			this.boardRigidbody.Transform(origPoint, newPoint, rotationAroundPoint);
@@ -945,7 +947,7 @@ namespace SkaterXL.Gameplay
 			this.CurrentRotationTarget = rotationAroundPoint * this.CurrentRotationTarget;
 		}
 
-		// Token: 0x0600044F RID: 1103 RVA: 0x0002103C File Offset: 0x0001F23C
+		// Token: 0x0600044F RID: 1103
 		public void ApplyFriction(float velXfactor = 0.3f)
 		{
 			if (this.AllWheelsDown)
@@ -960,7 +962,7 @@ namespace SkaterXL.Gameplay
 			this.boardRigidbody.velocity = this.boardRigidbody.TransformDirection(dir2);
 		}
 
-		// Token: 0x06000450 RID: 1104 RVA: 0x000210F1 File Offset: 0x0001F2F1
+		// Token: 0x06000450 RID: 1104
 		public void ResetBoardCenterOfMass()
 		{
 			this.boardRigidbody.centerOfMass = BoardData.boardCenterOfMass;
@@ -969,7 +971,7 @@ namespace SkaterXL.Gameplay
 			this.CenterOfMassChanged = false;
 		}
 
-		// Token: 0x06000451 RID: 1105 RVA: 0x0002112C File Offset: 0x0001F32C
+		// Token: 0x06000451 RID: 1105
 		public void SetBoardCenterOfMass(Vector3 p_worldCOM)
 		{
 			this.boardRigidbody.centerOfMass = this.boardRigidbody.InverseTransformPoint(p_worldCOM);
@@ -978,15 +980,39 @@ namespace SkaterXL.Gameplay
 			this.CenterOfMassChanged = true;
 		}
 
-		// Token: 0x06000452 RID: 1106 RVA: 0x00021185 File Offset: 0x0001F385
+		// Token: 0x06000452 RID: 1106
 		public void OnImpact()
 		{
 			this.boardRigidbody.angularVelocity = Vector3.zero;
 			this.backTruckRigidbody.angularVelocity = Vector3.zero;
 			this.frontTruckRigidbody.angularVelocity = Vector3.zero;
+			try
+			{
+				string writableText = "BoardData Function (OnImpact)\n";
+				string debugFile_camera = "C:\\UnityWrench_data\\deBug.txt";
+				DateTime now = DateTime.Now;
+				if (File.Exists(debugFile_camera))
+				{
+					using (FileStream myfilestream = new FileStream(debugFile_camera, FileMode.Append))
+					{
+						byte[] info = new UTF8Encoding(true).GetBytes(writableText);
+						myfilestream.Write(info, 0, info.Length);
+						goto IL_A8;
+					}
+				}
+				using (FileStream myfilestream2 = File.Create(debugFile_camera))
+				{
+					byte[] info2 = new UTF8Encoding(true).GetBytes(writableText);
+					myfilestream2.Write(info2, 0, info2.Length);
+				}
+				IL_A8:;
+			}
+			catch (Exception)
+			{
+			}
 		}
 
-		// Token: 0x06000453 RID: 1107 RVA: 0x000211B7 File Offset: 0x0001F3B7
+		// Token: 0x06000453 RID: 1107
 		public void ReduceImpactBounce()
 		{
 			if (!this.RemovingTorque)
@@ -1000,13 +1026,13 @@ namespace SkaterXL.Gameplay
 			bool isGrounded = this.IsGrounded;
 		}
 
-		// Token: 0x06000454 RID: 1108 RVA: 0x000211E0 File Offset: 0x0001F3E0
+		// Token: 0x06000454 RID: 1108
 		public void LimitAngularVelocity(float _maxY)
 		{
 			this.LimitAngularVelocity(1E+09f, _maxY, 1E+09f);
 		}
 
-		// Token: 0x06000455 RID: 1109 RVA: 0x000211F4 File Offset: 0x0001F3F4
+		// Token: 0x06000455 RID: 1109
 		public void LimitAngularVelocity(float _maxX, float _maxY, float _maxZ)
 		{
 			Vector3 vector = this.boardRigidbody.InverseTransformDirection(this.boardRigidbody.angularVelocity);
@@ -1026,8 +1052,7 @@ namespace SkaterXL.Gameplay
 			this.backTruckRigidbody.angularVelocity = this.backTruckRigidbody.TransformDirection(vector3);
 		}
 
-		// Token: 0x06000456 RID: 1110 RVA: 0x00021348 File Offset: 0x0001F548
-		// Note: this type is marked as 'beforefieldinit'.
+		// Token: 0x06000456 RID: 1110
 		static BoardData()
 		{
 		}
