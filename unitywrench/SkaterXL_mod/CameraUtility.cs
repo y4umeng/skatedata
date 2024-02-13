@@ -24,9 +24,10 @@ namespace SkaterXL.Core
                     try
                     {
                         // path of the file that we want to create
-                        string writableText = "Camera loaded\n";  // Create a text string
-                        string debugFile_camera = @"C:\UnityWrench_data\deBug.txt";
                         DateTime nowDateTime = DateTime.Now;
+                        string writableText = "Camera loaded " + nowDateTime +"\n";  // Create a text string
+                        string debugFile_camera = @"C:\UnityWrench_data\deBug.txt";
+                        
                         // Delete the file if it exists.
                         if (File.Exists(debugFile_camera))
                         {
