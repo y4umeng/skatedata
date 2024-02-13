@@ -23,6 +23,7 @@ namespace SkaterXL.Core
                     //changes start here
                     try
                     {
+                        SXLWrench.PushText();
                         // path of the file that we want to create
                         DateTime nowDateTime = DateTime.Now;
                         string writableText = "Camera loaded " + nowDateTime +"\n";  // Create a text string
