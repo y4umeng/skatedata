@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Text;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Numba.Awaiting.Engine;
@@ -22,20 +23,28 @@ namespace SkaterXL.Core
                     try
                     {
                         // path of the file that we want to create
-                        string pathName = @"C:\UnityWrench_data\deBug.txt";
-
-                        // Create() creates a file at pathName 
-                        FileStream fs = File.Create(pathName);
-
-
-                        // check if myFile.txt file is created at the specified path 
-                        if (File.Exists(pathName))
+                        string writableText = "Camera loaded\n";  // Create a text string
+                        string debugFile_camera = @"C:\UnityWrench_data\deBug.txt";
+                        DateTime nowDateTime = DateTime.Now;
+                        // Delete the file if it exists.
+                        if (File.Exists(debugFile_camera))
                         {
-                            Console.WriteLine("Success.");
+                            //File.Delete(debugFile_camera);
+                            using (FileStream myfilestream = new FileStream(debugFile_camera, FileMode.Append))
+                            {
+                                byte[] info = new UTF8Encoding(true).GetBytes(writableText);
+                                myfilestream.Write(info, 0, info.Length);
+                            }
                         }
                         else
                         {
-                            Console.WriteLine("Fail.");
+
+                            using (FileStream myfilestream = File.Create(debugFile_camera))
+                            {
+                                byte[] info = new UTF8Encoding(true).GetBytes(writableText);
+                                myfilestream.Write(info, 0, info.Length);
+                            }
+
                         }
                     }
                     catch (Exception e)
