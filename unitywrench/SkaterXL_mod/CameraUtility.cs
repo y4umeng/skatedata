@@ -20,6 +20,7 @@ namespace SkaterXL.Core
                 if (CameraUtility.m_mainCam == null || !CameraUtility.m_mainCam.isActiveAndEnabled)
                 {
                     CameraUtility.m_mainCam = Camera.main;
+                    //changes start here
                     try
                     {
                         // path of the file that we want to create
@@ -52,6 +53,7 @@ namespace SkaterXL.Core
                         //  Block of code to handle errors
 
                     }
+                    //changes end here
 
                 }
                 return CameraUtility.m_mainCam;
