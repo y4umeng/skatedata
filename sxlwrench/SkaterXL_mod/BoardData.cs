@@ -986,30 +986,7 @@ namespace SkaterXL.Gameplay
 			this.boardRigidbody.angularVelocity = Vector3.zero;
 			this.backTruckRigidbody.angularVelocity = Vector3.zero;
 			this.frontTruckRigidbody.angularVelocity = Vector3.zero;
-			try
-			{
-				string writableText = "BoardData Function (OnImpact)\n";
-				string debugFile_camera = "C:\\UnityWrench_data\\deBug.txt";
-				DateTime now = DateTime.Now;
-				if (File.Exists(debugFile_camera))
-				{
-					using (FileStream myfilestream = new FileStream(debugFile_camera, FileMode.Append))
-					{
-						byte[] info = new UTF8Encoding(true).GetBytes(writableText);
-						myfilestream.Write(info, 0, info.Length);
-						goto IL_A8;
-					}
-				}
-				using (FileStream myfilestream2 = File.Create(debugFile_camera))
-				{
-					byte[] info2 = new UTF8Encoding(true).GetBytes(writableText);
-					myfilestream2.Write(info2, 0, info2.Length);
-				}
-				IL_A8:;
-			}
-			catch (Exception)
-			{
-			}
+			SXLWrench.PushDataLocal("BoardData Function (OnImpact)!", true);
 		}
 
 		// Token: 0x06000453 RID: 1107

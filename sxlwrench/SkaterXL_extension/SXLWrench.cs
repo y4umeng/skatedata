@@ -11,42 +11,77 @@ namespace SkaterXL.Core
     // Token: 0x02000078 RID: 120
     public static class SXLWrench
     {
-        public static void PushText()
+        //need constructor here for dt
+        public static void PushDataLocal()
         {
-            //changes start here
             try
             {
-                // path of the file that we want to create
                 DateTime nowDateTime = DateTime.Now;
-                string writableText = "SXLWrench Loaded " + nowDateTime + "\n"; // Create a text string
-                string debugFile_camera = @"C:\UnityWrench_data\deBug.txt";
-
+                string outputText = "SXLWrench Loaded " + nowDateTime + "\n";
+                string debugFile_dtCurrent = @"C:\UnityWrench_data\deBug.txt";
                 // Delete the file if it exists.
-                if (File.Exists(debugFile_camera))
+                if (File.Exists(debugFile_dtCurrent))
                 {
                     //File.Delete(debugFile_camera);
-                    using (FileStream myfilestream = new FileStream(debugFile_camera, FileMode.Append))
+                    using (FileStream myfilestream = new FileStream(debugFile_dtCurrent, FileMode.Append))
                     {
-                        byte[] info = new UTF8Encoding(true).GetBytes(writableText);
+                        byte[] info = new UTF8Encoding(true).GetBytes(outputText);
                         myfilestream.Write(info, 0, info.Length);
                     }
                 }
                 else
                 {
-
-                    using (FileStream myfilestream = File.Create(debugFile_camera))
+                    using (FileStream myfilestream = File.Create(debugFile_dtCurrent))
                     {
-                        byte[] info = new UTF8Encoding(true).GetBytes(writableText);
+                        byte[] info = new UTF8Encoding(true).GetBytes(outputText);
                         myfilestream.Write(info, 0, info.Length);
                     }
-
                 }
             }
             catch (Exception e)
             {
                 //  Block of code to handle errors
             }
-            //changes end here
         }
+        public static void PushDataLocal(string outputCurrentDebug, bool dtSwitch)
+        {
+            try
+            {
+                string outputText = string.Empty;
+                DateTime nowDateTime = DateTime.Now;
+                string debugFile_dtCurrent = @"C:\UnityWrench_data\deBug.txt";
+                if (dtSwitch)
+                {
+                    outputText = outputCurrentDebug + " " + nowDateTime + "\n";
+                }
+                else if (!dtSwitch)
+                {
+                    outputText = outputCurrentDebug + "\n";
+                }
+                if (File.Exists(debugFile_dtCurrent))
+                {
+                    //File.Delete(debugFile_camera);
+                    using (FileStream myfilestream = new FileStream(debugFile_dtCurrent, FileMode.Append))
+                    {
+                        byte[] info = new UTF8Encoding(true).GetBytes(outputText);
+                        myfilestream.Write(info, 0, info.Length);
+                    }
+                }
+                else
+                {
+                    using (FileStream myfilestream = File.Create(debugFile_dtCurrent))
+                    {
+                        byte[] info = new UTF8Encoding(true).GetBytes(outputText);
+                        myfilestream.Write(info, 0, info.Length);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                //  Block of code to handle errors
+            }
+        }
+        //state machine start 
+        //state machine end
     }
 }
