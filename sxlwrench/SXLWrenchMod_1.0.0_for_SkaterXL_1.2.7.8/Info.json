@@ -1,0 +1,11 @@
+﻿{
+    "Id": "SXLWrench",
+    "DisplayName": "SXLWrench",
+    "Author": "ALL TECH LABZ",
+    "Version": "1.0.0",
+    "ManagerVersion": "0.22.5.0",
+    "AssemblyName": "SXLWrench.dll",
+    "EntryMethod": "SXLWrench.Main.Load",
+    "HomePage": "https://www.alltechlabz.com",
+    "Repository": ""
+}

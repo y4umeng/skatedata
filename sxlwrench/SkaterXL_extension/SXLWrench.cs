@@ -11,6 +11,13 @@ namespace SkaterXL.Core
     // Token: 0x02000078 RID: 120
     public static class SXLWrench
     {
+        public static void initCurrentStatus() {
+            DateTime nowDateTime = DateTime.Now;
+            string newBasePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string newPathDT = newBasePath + @"deBugClip_" + nowDateTime; 
+            System.IO.Directory.CreateDirectory(Server.MapPath(newPathDT));
+
+        }
         //need constructor here for dt
         public static void PushDataLocal()
         {

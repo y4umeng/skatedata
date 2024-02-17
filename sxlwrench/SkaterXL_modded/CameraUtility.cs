@@ -20,7 +20,6 @@ namespace SkaterXL.Core
                 if (CameraUtility.m_mainCam == null || !CameraUtility.m_mainCam.isActiveAndEnabled)
                 {
                     CameraUtility.m_mainCam = Camera.main;
-                    SXLWrench.PushDataLocal("Camera loaded ", true);
                 }
                 return CameraUtility.m_mainCam;
             }
@@ -41,6 +40,7 @@ namespace SkaterXL.Core
                 CameraUtility.cameraUpdateAwaiters.RemoveAt(0);
             }
             CameraUtility.lastCameraUpdateFrame = Time.frameCount;
+            SXLWrench.PushDataLocal("Frame", true);
         }
 
         // Token: 0x06000081 RID: 129 RVA: 0x00003570 File Offset: 0x00001770
