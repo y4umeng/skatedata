@@ -11,26 +11,89 @@ namespace SkaterXL.Core
     // Token: 0x02000078 RID: 120
     public static class SXLWrench
     {
-        public static void initCurrentStatus() {
+            string fileDTStamp = "";
+            bool fpSwitch = false;
+            string debugFile_dtCurrentPath = "";
+            string debugFile_dtCurrentFile = "";
+        private static string cleanDTGroup(bool yon)
+        {
             DateTime nowDateTime = DateTime.Now;
-            string newBasePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            string newPathDT = newBasePath + @"deBugClip_" + nowDateTime; 
-            System.IO.Directory.CreateDirectory(Server.MapPath(newPathDT));
+            string dtStringAppend = nowDateTime.ToString();
+            if (yon)
+            {
+
+                //remove special characters from Date Time
+                dtStringAppend = dtStringAppend.Replace(" ", "");
+                dtStringAppend = dtStringAppend.Replace(@"\", "");
+                dtStringAppend = dtStringAppend.Replace(":", "");
+                dtStringAppend = dtStringAppend.Replace(@"/", "");
+                dtStringAppend = dtStringAppend.Replace("@", "");
+                dtStringAppend = dtStringAppend.Replace("_", "");
+                dtStringAppend = dtStringAppend.Replace("-", "");
+                dtStringAppend = dtStringAppend.Replace("?", "");
+                dtStringAppend = dtStringAppend.Replace(",", "");
+                dtStringAppend = dtStringAppend.Replace(".", "");
+                dtStringAppend = dtStringAppend.Replace("!", "");
+                dtStringAppend = dtStringAppend.Replace("&", "");
+                dtStringAppend = dtStringAppend.Replace("(", "");
+                dtStringAppend = dtStringAppend.Replace(")", "");
+                dtStringAppend = dtStringAppend.Replace("$", "");
+                dtStringAppend = dtStringAppend.Replace("#", "");
+
+                //remove special characters from Date Time end
+                return dtStringAppend;
+            }
+            else if (!yon)
+            {
+                return dtStringAppend;
+
+            }
+            else
+            {
+                return dtStringAppend;
+            }
+            return dtStringAppend;
+        }
+        private static void initTimeFile()
+        {
+            if (fpSwitch == false)
+            {
+                try
+                {
+                    fileDTStamp = cleanDTGroup(true);
+                    string newBasePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                    string newPathDT = newBasePath + @"\SXLWrenchFiles\deBugClip" + fileDTStamp;
+                    System.IO.Directory.CreateDirectory(newPathDT);
+                    debugFile_dtCurrentPath = newPathDT;
+                    debugFile_dtCurrentFile = debugFile_dtCurrentPath + @"\deBugClip" + fileDTStamp;
+                }
+                catch (Exception e)
+                {
+                    return;
+                }
+                fpSwitch = true;
+
+            }
+            else
+            {
+
+            }
+        }
+        public static void initCurrentStatus()
+        {
+            initTimeFile();
+            AppendDebugFile("initCurrentStatus" + " " + @"new file\folder" + " " + debugFile_dtCurrentFile, true);
 
         }
         //need constructor here for dt
-        public static void PushDataLocal()
+        public static void AppendDebugFile()
         {
             try
             {
-                DateTime nowDateTime = DateTime.Now;
-                string outputText = "SXLWrench Loaded " + nowDateTime + "\n";
-                string debugFile_dtCurrent = @"C:\UnityWrench_data\deBug.txt";
-                // Delete the file if it exists.
-                if (File.Exists(debugFile_dtCurrent))
+                string outputText = " --- Ping --- " + nowDateTime + "\n";
+                if (File.Exists(debugFile_dtCurrentFile))
                 {
-                    //File.Delete(debugFile_camera);
-                    using (FileStream myfilestream = new FileStream(debugFile_dtCurrent, FileMode.Append))
+                    using (FileStream myfilestream = new FileStream(debugFile_dtCurrentFile, FileMode.Append))
                     {
                         byte[] info = new UTF8Encoding(true).GetBytes(outputText);
                         myfilestream.Write(info, 0, info.Length);
@@ -38,7 +101,8 @@ namespace SkaterXL.Core
                 }
                 else
                 {
-                    using (FileStream myfilestream = File.Create(debugFile_dtCurrent))
+                    initCurrentStatus();
+                    using (FileStream myfilestream = File.Create(debugFile_dtCurrentFile))
                     {
                         byte[] info = new UTF8Encoding(true).GetBytes(outputText);
                         myfilestream.Write(info, 0, info.Length);
@@ -47,28 +111,25 @@ namespace SkaterXL.Core
             }
             catch (Exception e)
             {
-                //  Block of code to handle errors
             }
         }
-        public static void PushDataLocal(string outputCurrentDebug, bool dtSwitch)
+        public static void AppendDebugFile(string outputCurrentDebug, bool dtSwitch)
         {
             try
             {
                 string outputText = string.Empty;
-                DateTime nowDateTime = DateTime.Now;
-                string debugFile_dtCurrent = @"C:\UnityWrench_data\deBug.txt";
                 if (dtSwitch)
                 {
-                    outputText = outputCurrentDebug + " " + nowDateTime + "\n";
+                    outputText = outputCurrentDebug + " " + cleanDTGroup(false) + "\n";
                 }
                 else if (!dtSwitch)
                 {
                     outputText = outputCurrentDebug + "\n";
                 }
-                if (File.Exists(debugFile_dtCurrent))
+                if (File.Exists(debugFile_dtCurrentFile))
                 {
                     //File.Delete(debugFile_camera);
-                    using (FileStream myfilestream = new FileStream(debugFile_dtCurrent, FileMode.Append))
+                    using (FileStream myfilestream = new FileStream(debugFile_dtCurrentFile, FileMode.Append))
                     {
                         byte[] info = new UTF8Encoding(true).GetBytes(outputText);
                         myfilestream.Write(info, 0, info.Length);
@@ -76,7 +137,7 @@ namespace SkaterXL.Core
                 }
                 else
                 {
-                    using (FileStream myfilestream = File.Create(debugFile_dtCurrent))
+                    using (FileStream myfilestream = File.Create(debugFile_dtCurrentFile))
                     {
                         byte[] info = new UTF8Encoding(true).GetBytes(outputText);
                         myfilestream.Write(info, 0, info.Length);
@@ -85,7 +146,6 @@ namespace SkaterXL.Core
             }
             catch (Exception e)
             {
-                //  Block of code to handle errors
             }
         }
         //state machine start 

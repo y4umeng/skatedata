@@ -20,7 +20,8 @@ https://www.youtube.com/watch?v=P5pgdnjrJ1c
 Nexus links:
 https://wiki.nexusmods.com/index.php/Unity_modding_tools
 
-
-
 RapidGUI
 https://github.com/fuqunaga/RapidGUI
+
+Harmony 2
+https://harmony.pardeike.net/articles/intro.html

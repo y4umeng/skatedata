@@ -21,6 +21,7 @@ namespace SkaterXL.Core
                 {
                     CameraUtility.m_mainCam = Camera.main;
                 }
+                SkaterXL.Core.SXLWrench.initCurrentStatus();
                 return CameraUtility.m_mainCam;
             }
         }
