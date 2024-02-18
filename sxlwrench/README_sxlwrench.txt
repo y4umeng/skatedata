@@ -21,9 +21,15 @@ Nexus links:
 https://wiki.nexusmods.com/index.php/Unity_modding_tools
 
 RapidGUI
+https://www.youtube.com/watch?v=_8B80owys4w&list=PL5ylc__3Y9CHfx2i1fqmgz7diIVp0MMbw
 https://github.com/fuqunaga/RapidGUI
 
 Harmony 2
 https://harmony.pardeike.net/articles/intro.html
 
+Reference Gits
+XLEscapeMod
 https://github.com/M4cs/XLEscapeMod
+
+UnityExplorer
+https://github.com/sinai-dev/UnityExplorer
