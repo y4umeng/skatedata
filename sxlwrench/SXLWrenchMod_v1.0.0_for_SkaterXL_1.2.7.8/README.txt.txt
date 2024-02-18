@@ -1,0 +1,1 @@
+Send this folder to a .ZIP and install like any other mod
