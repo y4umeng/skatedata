@@ -25,6 +25,8 @@ namespace SkaterXL.Core
             SXLWrench.PushDataLocal("--- SXLWrenchBase ---", true);
             Thread thread = new Thread(new ThreadStart(Worker));
             thread.Start();
+            SXLWrench.PushDataLocal("--- From DT Function ---", true);
+
         }
         public void Worker() {
             SXLWrench.PushDataLocal("--- Threaded Base ---", true);
