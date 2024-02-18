@@ -1,11 +1,11 @@
 ﻿{
-    "Id": "SXLWrench",
+    "Id": "SXLWrenchDLLm",
     "DisplayName": "SXLWrench",
     "Author": "ALL TECH LABZ",
     "Version": "1.0.0",
     "ManagerVersion": "0.22.5.0",
-    "AssemblyName": "",
-    "EntryMethod": "SXLWrenchDLLm.Main.Load",
+    "AssemblyName": "SXLWrenchDLLm.dll",
+    "EntryMethod": "SXLWrenchDLLm.Main.initFunction",
     "HomePage": "",
     "Repository": "https://github.com/y4umeng/skatedata"
 }
