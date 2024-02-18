@@ -1,20 +1,19 @@
-using System;
-using System.IO;
-using System.Text;
+﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
-using Numba.Awaiting.Engine;
-using UnityEngine;
 
-namespace SkaterXL.Core
+namespace SXLWrench
 {
-    // Token: 0x02000078 RID: 120
-    public static class SXLWrench
+    
+    public static class ToolBox
     {
-            string fileDTStamp = "";
-            bool fpSwitch = false;
-            string debugFile_dtCurrentPath = "";
-            string debugFile_dtCurrentFile = "";
+        private static string fileDTStamp = "";
+        private static bool fpSwitch = false;
+        private static string debugFile_dtCurrentPath = "";
+        private static string debugFile_dtCurrentFile;
         private static string cleanDTGroup(bool yon)
         {
             DateTime nowDateTime = DateTime.Now;
@@ -90,7 +89,7 @@ namespace SkaterXL.Core
         {
             try
             {
-                string outputText = " --- Ping --- " + nowDateTime + "\n";
+                string outputText = " --- Ping --- " + cleanDTGroup(false) + "\n";
                 if (File.Exists(debugFile_dtCurrentFile))
                 {
                     using (FileStream myfilestream = new FileStream(debugFile_dtCurrentFile, FileMode.Append))
