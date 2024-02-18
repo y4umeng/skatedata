@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using HarmonyLib;
 using UnityEngine;
 using UnityModManagerNet;
+using System.Reflection;
 
 /* Notes
  * added references for the following
@@ -28,6 +29,10 @@ namespace SXLWrench
         {
             SkaterXL.Core.SXLWrench.PushDataLocal("From DLL", true);
             //harmony
+            EntryPointMain.mod = new GameObject().AddComponent<GUIOverlay>();
+            UnityEngine.Object.DontDestroyOnLoad(EntryPointMain.mod);
         }
+        public static GUIOverlay mod;
     }
+    
 }

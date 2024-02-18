@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntryPointMain.cs" />
+    <Compile Include="GUIOverlay.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SXLWrenchBaseOBJ.cs" />
     <Compile Include="ToolBox.cs" />

@@ -14,7 +14,7 @@ namespace SXLWrench
         private static bool fpSwitch = false;
         private static string debugFile_dtCurrentPath = "";
         private static string debugFile_dtCurrentFile;
-        private static string cleanDTGroup(bool yon)
+        public static string cleanDTGroup(bool yon)
         {
             DateTime nowDateTime = DateTime.Now;
             string dtStringAppend = nowDateTime.ToString();
