@@ -1,0 +1,11 @@
+﻿{
+    "Id": "SXLWrenchMod_v1.0.0_for_SkaterXL_1.2.7.8",
+    "DisplayName": "SXLWrench",
+    "Author": "All Tech Labz and y4umeng",
+    "Version": "1.0.0",
+    "ManagerVersion": "0.22.5.0",
+    "AssemblyName": "SXLWrenchDLL.dll",
+    "EntryMethod": "SXLWrenchDLL.Main.initFunction",
+    "HomePage": "",
+    "Repository": "https://github.com/y4umeng/skatedata"
+}
