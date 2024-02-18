@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\mybad\\Documents\\GitHub\\skatedata\\sxlwrench\\msvs2022\\SXLWrench\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{72F4715F-A8F3-4CF4-91CF-B1AE518B1ED9}|SXLWrench\\SXLWrench.csproj|c:\\users\\mybad\\documents\\github\\skatedata\\sxlwrench\\msvs2022\\sxlwrench\\sxlwrench\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{72F4715F-A8F3-4CF4-91CF-B1AE518B1ED9}|SXLWrench\\SXLWrench.csproj|solutionrelative:sxlwrench\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{72F4715F-A8F3-4CF4-91CF-B1AE518B1ED9}|SXLWrench\\SXLWrench.csproj|c:\\users\\mybad\\documents\\github\\skatedata\\sxlwrench\\msvs2022\\sxlwrench\\sxlwrench\\entrypointmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72F4715F-A8F3-4CF4-91CF-B1AE518B1ED9}|SXLWrench\\SXLWrench.csproj|solutionrelative:sxlwrench\\entrypointmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Main.cs",
-              "DocumentMoniker": "C:\\Users\\mybad\\Documents\\GitHub\\skatedata\\sxlwrench\\msvs2022\\SXLWrench\\SXLWrench\\Main.cs",
-              "RelativeDocumentMoniker": "SXLWrench\\Main.cs",
-              "ToolTip": "C:\\Users\\mybad\\Documents\\GitHub\\skatedata\\sxlwrench\\msvs2022\\SXLWrench\\SXLWrench\\Main.cs",
-              "RelativeToolTip": "SXLWrench\\Main.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAAABcAAAABAAAA",
+              "Title": "EntryPointMain.cs",
+              "DocumentMoniker": "C:\\Users\\mybad\\Documents\\GitHub\\skatedata\\sxlwrench\\msvs2022\\SXLWrench\\SXLWrench\\EntryPointMain.cs",
+              "RelativeDocumentMoniker": "SXLWrench\\EntryPointMain.cs",
+              "ToolTip": "C:\\Users\\mybad\\Documents\\GitHub\\skatedata\\sxlwrench\\msvs2022\\SXLWrench\\SXLWrench\\EntryPointMain.cs",
+              "RelativeToolTip": "SXLWrench\\EntryPointMain.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABkAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-18T07:29:27.812Z",
+              "WhenOpened": "2024-02-18T07:49:45.261Z",
               "EditorCaption": ""
             },
             {

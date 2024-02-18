@@ -20,9 +20,9 @@ using UnityModManagerNet;
  * UnityModManager
  * */
 
-namespace SXLWrenchDLLm
+namespace SXLWrench
 {
-    static class Main
+    static class EntryPointMain
     {
         static void Load()
         {
