@@ -1,11 +1,14 @@
---- unitywrench is in development ---
+--- SXLWrench Dev Notes ---
 this space is reserved for instructions as of February 11th 2024
 
-Unity wrench is the name of the tool set (WIP) to extrapolate angular data from SkaterXL gameplay
+SXLWrench is the name of this tool (WIP) to extrapolate angular data from SkaterXL gameplay
 
 
 Installation Instructions:
-1.) Not sure yet but planning to keep it simple and build it to function just like any other SkaterXL mod 
+1.) Copy or fork "SXLWrenchMod_v1.0.0_for_SkaterXL_1.2.7.8" folder to your Documents folder
+2.) Send to Zip (a.k.a. now called Compress to Zip)
+3.) Install with UMM like any other SXL Mod
+4.) Press W key to toggle ON and OFF
 
 
 Concept of development:
