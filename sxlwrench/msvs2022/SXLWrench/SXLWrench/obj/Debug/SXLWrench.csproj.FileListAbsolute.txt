@@ -4,6 +4,9 @@ C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\Assembly-CSharp-firstpass.dll
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\Assembly-CSharp.dll
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\SkaterXL.Core.dll
+C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\SkaterXL.Data.dll
+C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\SkaterXL.Gameplay.dll
+C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\SkaterXL.Replay.dll
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\UnityEngine.CoreModule.dll
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\UnityEngine.dll
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\UnityEngine.IMGUIModule.dll
@@ -17,7 +20,6 @@ C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\XInputDotNetPure.dll
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\UnityDLL.dll
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\HtmlAgilityPack.dll
-C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\SkaterXL.Data.dll
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\SkaterXL.TrickDetection.dll
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\ConsoleManagers.dll
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\Mixpanel.dll
@@ -31,7 +33,6 @@ C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\Rewired_Core.dll
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\Unity.RenderPipelines.Core.Runtime.dll
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\Unity.RenderPipelines.HighDefinition.Runtime.dll
-C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\SkaterXL.Gameplay.dll
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\SkaterXL.Multiplayer.dll
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\BFSUtilities.dll
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\Newtonsoft.Json.dll
@@ -41,7 +42,6 @@ C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\UnityEngine.AssetBundleModule.dll
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\SkaterXL.Map.dll
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\PhotonRealtime.dll
-C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\SkaterXL.Replay.dll
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\PhotonUnityNetworking.dll
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\Photon3Unity3D.dll
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\PhotonUnityNetworking.Utilities.dll
@@ -62,6 +62,10 @@ C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\Rewired_Windows.dll
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\UnityEngine.TerrainPhysicsModule.dll
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\Unity.Burst.dll
+C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\Ionic.Zip.Unity.dll
+C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\ZeroFormatter.dll
+C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\ZeroFormatter.Interfaces.dll
+C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\Unity.Mathematics.dll
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\UnityEngine.DSPGraphModule.dll
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\UnityEngine.AndroidJNIModule.dll
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\UnityEngine.AccessibilityModule.dll
@@ -98,10 +102,6 @@ C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\UnityEngine.XRModule.dll
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\UnityEngine.InputModule.dll
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\dnlib.dll
-C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\Ionic.Zip.Unity.dll
-C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\ZeroFormatter.dll
-C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\ZeroFormatter.Interfaces.dll
-C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\Unity.Mathematics.dll
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\Unity.Timeline.dll
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\Unity.VisualEffectGraph.Runtime.dll
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\Unity.RenderPipelines.HighDefinition.Config.Runtime.dll

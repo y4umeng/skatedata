@@ -13,22 +13,23 @@ namespace SXLWrench
         private string data6Ddt = string.Empty;
         private int clipIDnum = 1;
         private string clipID = "clipID: ";
-        private int data6Dboardxrot = 0;
-        private int data6Dboardyrot = 0;
-        private int data6Dboardzrot = 0;
-        private int data6Ddistfromcamera = 0;
-        private int data6Dboardxpos = 0;
-        private int data6Dboardypos = 0;
-        private int psuedoframe = 0;
+        private long psuedoframe = 0;
+        public float data6Dboardxrot = 0;
+        public float data6Dboardyrot = 0;
+        public float data6Dboardzrot = 0;
+        public float data6Ddistfromcamera = 0;
+        public float data6Dboardxpos = 0;
+        public float data6Dboardypos = 0; 
 
         private void Start()
         {
             this.boolDisplayWindow = false;
+            data6Ddt = ToolBox.cleanDTGroup(false);
             clipID = clipID + clipIDnum.ToString();
         }
         private void Update()
         {
-            data6Ddt = ToolBox.cleanDTGroup(false);
+            ToolBox.returnBoardData();
             psuedoframe++;
             if (Input.GetKeyDown(KeyCode.W))
             {

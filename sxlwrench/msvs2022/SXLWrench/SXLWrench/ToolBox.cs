@@ -4,6 +4,14 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SkaterXL;
+using SkaterXL.Core;
+using SkaterXL.Data;
+using SkaterXL.Gameplay;
+using HarmonyLib;
+using UnityEngine;
+using UnityModManagerNet;
+using System.Reflection;
 
 namespace SXLWrench
 {
@@ -14,6 +22,37 @@ namespace SXLWrench
         private static bool fpSwitch = false;
         private static string debugFile_dtCurrentPath = "";
         private static string debugFile_dtCurrentFile;
+        public static void returnBoardData()
+        {
+            //6D string data
+            /*
+        private float data6Ddistfromcamera = 0;
+        private float data6Dboardxpos = 0;
+        private float data6Dboardypos = 0;
+            */
+            string retVal ="";
+            //Board Variables
+            GameObject BoardOBJ;
+            Vector3 BoardV3Position;
+            Quaternion BoardQ;
+            Vector3 BoardV3Rotation;
+            //Camera Variables
+            GameObject CameraOBJ;
+            
+            
+
+            //Board data assingments
+            BoardOBJ = GameObject.Find("Skateboard");
+            BoardV3Position = BoardOBJ.transform.position;
+            BoardQ = BoardOBJ.transform.rotation;
+            BoardV3Rotation = BoardQ.eulerAngles;
+            EntryPointMain.mod.data6Dboardxrot = BoardV3Rotation.x;
+            EntryPointMain.mod.data6Dboardyrot = BoardV3Rotation.y;
+            EntryPointMain.mod.data6Dboardzrot = BoardV3Rotation.z;
+
+            //EntryPointMain.mod.
+            //Camera data assignments 
+        }
         public static string cleanDTGroup(bool yon)
         {
             DateTime nowDateTime = DateTime.Now;
