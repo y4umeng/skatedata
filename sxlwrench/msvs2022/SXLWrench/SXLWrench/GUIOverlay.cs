@@ -30,9 +30,19 @@ namespace SXLWrench
         public float data6Ddistfromcamera = 0;
         public float data6Dboardxpos = 0;
         public float data6Dboardypos = 0;
+        //Multi-Camera solution
+        GameObject BaseOBJ = new GameObject();
+        Camera cameraX;
         private void spawnCameraFunction()
         {
-            SXLWrench.ToolBox.AppendDebugFile("Spawn Camera!", false);
+            //SXLWrench.ToolBox.AppendDebugFile("Spawn Camera!", false);
+            Camera.main.enabled = false;            
+            BaseOBJ = GameObject.Find("New Master Prefab(Clone)");
+            cameraX = BaseOBJ.AddComponent<Camera>();
+            cameraX.enabled = true;
+            cameraX.transform.position = new Vector3(0, 1.7F, 5);
+            cameraX.transform.rotation = Quaternion.Euler(0, 327, 0);
+
 
         }
 
@@ -110,8 +120,9 @@ namespace SXLWrench
             //boardy pos
             GUILayout.Label("board 2d Y: " + data6Dboardypos.ToString(), Array.Empty<GUILayoutOption>());
             //spawn cam
-            /*if (GUILayout.Button("Spawn Camera!"))
+            /* if (GUILayout.Button("Spawn Camera!"))
             {
+                spawnCameraFunction();
 
             }*/
         }
