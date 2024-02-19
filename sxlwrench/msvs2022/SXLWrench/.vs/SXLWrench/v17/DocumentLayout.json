@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\mybad\\Documents\\GitHub\\skatedata\\sxlwrench\\msvs2022\\SXLWrench\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{72F4715F-A8F3-4CF4-91CF-B1AE518B1ED9}|SXLWrench\\SXLWrench.csproj|C:\\Users\\mybad\\Documents\\GitHub\\skatedata\\sxlwrench\\msvs2022\\SXLWrench\\sxlwrench\\guioverlay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{72F4715F-A8F3-4CF4-91CF-B1AE518B1ED9}|SXLWrench\\SXLWrench.csproj|c:\\users\\mybad\\documents\\github\\skatedata\\sxlwrench\\msvs2022\\sxlwrench\\sxlwrench\\guioverlay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{72F4715F-A8F3-4CF4-91CF-B1AE518B1ED9}|SXLWrench\\SXLWrench.csproj|solutionrelative:sxlwrench\\guioverlay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -11,7 +11,7 @@
       "RelativeMoniker": "D:0:0:{72F4715F-A8F3-4CF4-91CF-B1AE518B1ED9}|SXLWrench\\SXLWrench.csproj|solutionrelative:sxlwrench\\setupoverlay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{72F4715F-A8F3-4CF4-91CF-B1AE518B1ED9}|SXLWrench\\SXLWrench.csproj|c:\\users\\mybad\\documents\\github\\skatedata\\sxlwrench\\msvs2022\\sxlwrench\\sxlwrench\\toolbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{72F4715F-A8F3-4CF4-91CF-B1AE518B1ED9}|SXLWrench\\SXLWrench.csproj|C:\\Users\\mybad\\Documents\\GitHub\\skatedata\\sxlwrench\\msvs2022\\SXLWrench\\sxlwrench\\toolbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{72F4715F-A8F3-4CF4-91CF-B1AE518B1ED9}|SXLWrench\\SXLWrench.csproj|solutionrelative:sxlwrench\\toolbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
@@ -47,6 +47,19 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GUIOverlay.cs",
+              "DocumentMoniker": "C:\\Users\\mybad\\Documents\\GitHub\\skatedata\\sxlwrench\\msvs2022\\SXLWrench\\SXLWrench\\GUIOverlay.cs",
+              "RelativeDocumentMoniker": "SXLWrench\\GUIOverlay.cs",
+              "ToolTip": "C:\\Users\\mybad\\Documents\\GitHub\\skatedata\\sxlwrench\\msvs2022\\SXLWrench\\SXLWrench\\GUIOverlay.cs",
+              "RelativeToolTip": "SXLWrench\\GUIOverlay.cs",
+              "ViewState": "AQIAAGAAAAAAAAAAAAAgwHMAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T10:18:26.026Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
               "Title": "ToolBox.cs",
               "DocumentMoniker": "C:\\Users\\mybad\\Documents\\GitHub\\skatedata\\sxlwrench\\msvs2022\\SXLWrench\\SXLWrench\\ToolBox.cs",
@@ -55,8 +68,7 @@
               "RelativeToolTip": "SXLWrench\\ToolBox.cs",
               "ViewState": "AQIAAMkAAAAAAAAAAAAswF4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-18T09:40:09.527Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-18T09:40:09.527Z"
             },
             {
               "$type": "Document",
@@ -68,21 +80,7 @@
               "RelativeToolTip": "SXLWrench\\SetupOverlay.cs",
               "ViewState": "AQIAADYAAAAAAAAAAAAAwEMAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-19T10:20:55.058Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GUIOverlay.cs",
-              "DocumentMoniker": "C:\\Users\\mybad\\Documents\\GitHub\\skatedata\\sxlwrench\\msvs2022\\SXLWrench\\SXLWrench\\GUIOverlay.cs",
-              "RelativeDocumentMoniker": "SXLWrench\\GUIOverlay.cs",
-              "ToolTip": "C:\\Users\\mybad\\Documents\\GitHub\\skatedata\\sxlwrench\\msvs2022\\SXLWrench\\SXLWrench\\GUIOverlay.cs",
-              "RelativeToolTip": "SXLWrench\\GUIOverlay.cs",
-              "ViewState": "AQIAAFwAAAAAAAAAAAAgwHQAAAAPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-18T10:18:26.026Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-19T10:20:55.058Z"
             },
             {
               "$type": "Bookmark",
@@ -98,8 +96,7 @@
               "RelativeToolTip": "SXLWrench\\EntryPointMain.cs",
               "ViewState": "AQIAABEAAAAAAAAAAAAjwB4AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-18T07:49:45.261Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-18T07:49:45.261Z"
             }
           ]
         }

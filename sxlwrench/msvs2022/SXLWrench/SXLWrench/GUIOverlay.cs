@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace SXLWrench
 {
@@ -66,6 +67,8 @@ namespace SXLWrench
                 //Main window
                 GUI.backgroundColor = Color.black;
                 this.DWDisplay = GUI.Window(313376377, new Rect((float)numX, (float)numY, (float)numW, (float)numH), new GUI.WindowFunction(this.guiWindowFunction), "SXLWrench");
+                //Button
+                
                 //Black background
                 if (true)
                 {
@@ -76,12 +79,8 @@ namespace SXLWrench
                         for (int i2 = 0; i2 < 128; i2++)
                         {
                             bBGT2D.SetPixel(i, i2, boxColor);
-
                         }
-
                     }
-
-
                     if (Event.current.type.Equals(EventType.Repaint))
                     {
                         bBGT2D.Apply();
@@ -111,9 +110,9 @@ namespace SXLWrench
             //boardy pos
             GUILayout.Label("board 2d Y: " + data6Dboardypos.ToString(), Array.Empty<GUILayoutOption>());
             //spawn cam
-            /*if (GUI.Button(new Rect(10, 70, 50, 30), "Spawn Cam"))
+            /*if (GUILayout.Button("Spawn Camera!"))
             {
-                spawnCameraFunction();
+
             }*/
         }
         public GUIOverlay()
