@@ -29,7 +29,6 @@ namespace SXLWrench
         public static SetupOverlay setupOverlay;
         static void Load()
         {
-            SkaterXL.Core.SXLWrench.PushDataLocal("From DLL", true);
             //harmony
             //GUI
             EntryPointMain.modGUI = new GameObject().AddComponent<GUIOverlay>();

@@ -28,7 +28,12 @@ namespace SXLWrench
         public float data6Dboardzrot = 0;
         public float data6Ddistfromcamera = 0;
         public float data6Dboardxpos = 0;
-        public float data6Dboardypos = 0; 
+        public float data6Dboardypos = 0;
+        private void spawnCameraFunction()
+        {
+            SXLWrench.ToolBox.AppendDebugFile("Spawn Camera!", false);
+
+        }
 
         private void Start()
         {
@@ -105,6 +110,11 @@ namespace SXLWrench
             GUILayout.Label("board 2d X: " + data6Dboardxpos.ToString(), Array.Empty<GUILayoutOption>());
             //boardy pos
             GUILayout.Label("board 2d Y: " + data6Dboardypos.ToString(), Array.Empty<GUILayoutOption>());
+            //spawn cam
+            /*if (GUI.Button(new Rect(10, 70, 50, 30), "Spawn Cam"))
+            {
+                spawnCameraFunction();
+            }*/
         }
         public GUIOverlay()
         {
