@@ -25,14 +25,20 @@ namespace SXLWrench
 {
     static class EntryPointMain
     {
+        public static GUIOverlay modGUI;
+        public static SetupOverlay setupOverlay;
         static void Load()
         {
             SkaterXL.Core.SXLWrench.PushDataLocal("From DLL", true);
             //harmony
-            EntryPointMain.mod = new GameObject().AddComponent<GUIOverlay>();
-            UnityEngine.Object.DontDestroyOnLoad(EntryPointMain.mod);
+            //GUI
+            EntryPointMain.modGUI = new GameObject().AddComponent<GUIOverlay>();
+            UnityEngine.Object.DontDestroyOnLoad(EntryPointMain.modGUI);
+            //Rectangle box
+            EntryPointMain.setupOverlay = new GameObject().AddComponent<SetupOverlay>();
+            UnityEngine.Object.DontDestroyOnLoad(EntryPointMain.setupOverlay);
         }
-        public static GUIOverlay mod;
+        
     }
     
 }

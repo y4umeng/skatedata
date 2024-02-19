@@ -9,7 +9,16 @@ namespace SXLWrench
 {
     public class GUIOverlay : MonoBehaviour
     {
-        //6D string data
+        //GUI variables
+        public bool boolDisplayWindow;
+        private Rect DWDisplay;
+        int numW = 600;
+        int numH = 300;
+        int numX = 0;
+        int numY = 0;
+        //GUI box variables
+        Color boxColor = new Color(0, 0, 0, 1);
+        //6D data of various types declared and defined with default values
         private string data6Ddt = string.Empty;
         private int clipIDnum = 1;
         private string clipID = "clipID: ";
@@ -23,9 +32,9 @@ namespace SXLWrench
 
         private void Start()
         {
-            this.boolDisplayWindow = false;
+            boolDisplayWindow = false;
             data6Ddt = ToolBox.cleanDTGroup(false);
-            clipID = clipID + clipIDnum.ToString();
+            clipID = clipID + clipIDnum.ToString();        
         }
         private void Update()
         {
@@ -34,6 +43,7 @@ namespace SXLWrench
             if (Input.GetKeyDown(KeyCode.W))
             {
                 this.boolDisplayWindow = !this.boolDisplayWindow;
+                
                 if (this.boolDisplayWindow)
                 {
                     Cursor.visible = true;
@@ -48,19 +58,35 @@ namespace SXLWrench
         {
             if (this.boolDisplayWindow)
             {
-                int num = 600;
-                int num2 = 300;
-                int num3 = 0; //Screen.width
-                int num4 = 0; //Screen.height
+                //Main window
                 GUI.backgroundColor = Color.black;
-                this.DWDisplay = GUI.Window(313376377, new Rect((float)num3, (float)num4, (float)num, (float)num2), new GUI.WindowFunction(this.DataWindowedDisplay), "SXLWrench");
+                this.DWDisplay = GUI.Window(313376377, new Rect((float)numX, (float)numY, (float)numW, (float)numH), new GUI.WindowFunction(this.guiWindowFunction), "SXLWrench");
+                //Black background
+                if (true)
+                {
+                    Texture bBGT;
+                    Texture2D bBGT2D = new Texture2D(128, 128);
+                    for (int i = 0; i < 128; i++)
+                    {
+                        for (int i2 = 0; i2 < 128; i2++)
+                        {
+                            bBGT2D.SetPixel(i, i2, boxColor);
+
+                        }
+
+                    }
+
+
+                    if (Event.current.type.Equals(EventType.Repaint))
+                    {
+                        bBGT2D.Apply();
+                        Graphics.DrawTexture(new Rect(numX, numY, numW, numH), bBGT2D);
+                    }
+                }
             }
         }
-        private void DataWindowedDisplay(int windowID)
+        private void guiWindowFunction(int windowID)
         {
-            float num = (float)((Screen.width - 50) / 2);
-            int num2 = (Screen.height - 50) / 2;
-            GUI.DragWindow(new Rect(num, (float)num2, 100f, 100f));
             //dtstamp
             GUILayout.Label(data6Ddt, Array.Empty<GUILayoutOption>());
             //clipid
@@ -81,10 +107,7 @@ namespace SXLWrench
             GUILayout.Label("board 2d Y: " + data6Dboardypos.ToString(), Array.Empty<GUILayoutOption>());
         }
         public GUIOverlay()
-    {
-
+        {
+        }
     }
-    private bool boolDisplayWindow;
-    private Rect DWDisplay;
-}
 }

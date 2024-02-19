@@ -12,6 +12,9 @@ using HarmonyLib;
 using UnityEngine;
 using UnityModManagerNet;
 using System.Reflection;
+using JetBrains.Annotations;
+using System.Xml.Linq;
+using static UnityEngine.GraphicsBuffer;
 
 namespace SXLWrench
 {
@@ -24,9 +27,19 @@ namespace SXLWrench
         private static string debugFile_dtCurrentFile;
         public static void returnBoardData()
         {
+            int ifZero(int value)
+            {
+                if (value == 360)
+                {
+                    return 0;
+                }
+                else
+                {
+                    return value;
+                }
+            }
             //6D string data
             /*
-        private float data6Ddistfromcamera = 0;
         private float data6Dboardxpos = 0;
         private float data6Dboardypos = 0;
             */
@@ -38,20 +51,40 @@ namespace SXLWrench
             Vector3 BoardV3Rotation;
             //Camera Variables
             GameObject CameraOBJ;
-            
-            
-
+            Vector3 CameraV3Position;
+            Quaternion CameraQ;
+            Vector3 CameraV3Rotation;
+            float CamBoardDistF;
             //Board data assingments
             BoardOBJ = GameObject.Find("Skateboard");
             BoardV3Position = BoardOBJ.transform.position;
             BoardQ = BoardOBJ.transform.rotation;
             BoardV3Rotation = BoardQ.eulerAngles;
-            EntryPointMain.mod.data6Dboardxrot = BoardV3Rotation.x;
-            EntryPointMain.mod.data6Dboardyrot = BoardV3Rotation.y;
-            EntryPointMain.mod.data6Dboardzrot = BoardV3Rotation.z;
+            EntryPointMain.modGUI.data6Dboardxrot = ifZero(Mathf.RoundToInt(BoardV3Rotation.x));
+            EntryPointMain.modGUI.data6Dboardyrot = ifZero(Mathf.RoundToInt(BoardV3Rotation.y));
+            EntryPointMain.modGUI.data6Dboardzrot = ifZero(Mathf.RoundToInt(BoardV3Rotation.z));
+            //Camera data calculations
 
-            //EntryPointMain.mod.
-            //Camera data assignments 
+            //float distance = Vector3.Distance(object1.transform.position, object2.transform.position);
+            CameraOBJ = GameObject.Find("Main Camera");
+            CameraV3Position = CameraOBJ.transform.position;
+            CameraQ = CameraOBJ.transform.rotation;
+            CameraV3Rotation = CameraQ.eulerAngles;
+            CamBoardDistF = Vector3.Distance(CameraOBJ.transform.position, BoardOBJ.transform.position);
+            EntryPointMain.modGUI.data6Ddistfromcamera = ifZero(Mathf.RoundToInt(CamBoardDistF));
+
+
+
+            //Player.skateboard 2D position data
+            Camera igCam = CameraOBJ.GetComponent<Camera>();
+            Vector3 boardSSPOS = igCam.WorldToScreenPoint(BoardOBJ.transform.position);
+            float board2DPOSx = boardSSPOS.x;
+            float board2DPOSy = boardSSPOS.y;
+            EntryPointMain.modGUI.data6Dboardxpos = board2DPOSx;
+            EntryPointMain.modGUI.data6Dboardypos = board2DPOSy;
+            //
+
+
         }
         public static string cleanDTGroup(bool yon)
         {
