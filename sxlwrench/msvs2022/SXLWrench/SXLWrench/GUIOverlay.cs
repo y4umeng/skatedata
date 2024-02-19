@@ -9,14 +9,27 @@ namespace SXLWrench
 {
     public class GUIOverlay : MonoBehaviour
     {
-        private string forMenu = string.Empty;
+        //6D string data
+        private string data6Ddt = string.Empty;
+        private int clipIDnum = 1;
+        private string clipID = "clipID: ";
+        private int data6Dboardxrot = 0;
+        private int data6Dboardyrot = 0;
+        private int data6Dboardzrot = 0;
+        private int data6Ddistfromcamera = 0;
+        private int data6Dboardxpos = 0;
+        private int data6Dboardypos = 0;
+        private int psuedoframe = 0;
+
         private void Start()
         {
             this.boolDisplayWindow = false;
+            clipID = clipID + clipIDnum.ToString();
         }
         private void Update()
         {
-            forMenu = ToolBox.cleanDTGroup(false);
+            data6Ddt = ToolBox.cleanDTGroup(false);
+            psuedoframe++;
             if (Input.GetKeyDown(KeyCode.W))
             {
                 this.boolDisplayWindow = !this.boolDisplayWindow;
@@ -47,13 +60,30 @@ namespace SXLWrench
             float num = (float)((Screen.width - 50) / 2);
             int num2 = (Screen.height - 50) / 2;
             GUI.DragWindow(new Rect(num, (float)num2, 100f, 100f));
-            GUILayout.Label(forMenu, Array.Empty<GUILayoutOption>());
+            //dtstamp
+            GUILayout.Label(data6Ddt, Array.Empty<GUILayoutOption>());
+            //clipid
+            GUILayout.Label(clipID, Array.Empty<GUILayoutOption>());
+            //psuedoframe
+            GUILayout.Label("psuedoframe: " + psuedoframe.ToString(), Array.Empty<GUILayoutOption>());
+            //boardx rot
+            GUILayout.Label("board.x R: " + data6Dboardxrot.ToString(), Array.Empty<GUILayoutOption>());
+            //boardy rot
+            GUILayout.Label("board.y R: " + data6Dboardyrot.ToString(), Array.Empty<GUILayoutOption>());
+            //boardz rot
+            GUILayout.Label("board.z R: " + data6Dboardzrot.ToString(), Array.Empty<GUILayoutOption>());
+            //d from cam
+            GUILayout.Label("d from cam: " + data6Ddistfromcamera.ToString(), Array.Empty<GUILayoutOption>());
+            //boardx pos
+            GUILayout.Label("board 2d X: " + data6Dboardxpos.ToString(), Array.Empty<GUILayoutOption>());
+            //boardy pos
+            GUILayout.Label("board 2d Y: " + data6Dboardypos.ToString(), Array.Empty<GUILayoutOption>());
         }
         public GUIOverlay()
-        {
+    {
 
-        }
-        private bool boolDisplayWindow;
-        private Rect DWDisplay;
     }
+    private bool boolDisplayWindow;
+    private Rect DWDisplay;
+}
 }
