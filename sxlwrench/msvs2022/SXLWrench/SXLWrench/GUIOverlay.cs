@@ -16,7 +16,7 @@ namespace SXLWrench
         }
         private void Update()
         {
-            forMenu = ToolBox.cleanDTGroup(true);
+            forMenu = ToolBox.cleanDTGroup(false);
             if (Input.GetKeyDown(KeyCode.W))
             {
                 this.boolDisplayWindow = !this.boolDisplayWindow;

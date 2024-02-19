@@ -108,8 +108,7 @@ C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\Unity.Burst.Unsafe.dll
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\UnityModManager.xml
-C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\obj\Debug\SXLWrench.csproj.AssemblyReference.cache
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\obj\Debug\SXLWrench.csproj.CoreCompileInputs.cache
-C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\obj\Debug\SXLWrench.csproj.Up2Date
+C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\obj\Debug\SXLWrench.csproj.CopyComplete
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\obj\Debug\SXLWrench.dll
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\obj\Debug\SXLWrench.pdb
