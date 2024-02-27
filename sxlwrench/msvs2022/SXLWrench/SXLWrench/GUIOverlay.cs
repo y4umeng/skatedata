@@ -21,9 +21,7 @@ namespace SXLWrench
         Color boxColor = new Color(0, 0, 0, 1);
         //6D data of various types declared and defined with default values
         private string data6Ddt = string.Empty;
-        private int clipIDnum = 1;
         private string clipID = "clipID: ";
-        private long psuedoframe = 0;
         public float data6Dboardxrot = 0;
         public float data6Dboardyrot = 0;
         public float data6Dboardzrot = 0;
@@ -66,9 +64,6 @@ namespace SXLWrench
     }
         private void Update()
         {
-            ToolBox.returnBoardData();
-            psuedoframe++;
-            frameSinceStart = EntryPointMain.newFrames.frameNumber;
             if (Input.GetKeyDown(KeyCode.W))
             {
                 this.boolDisplayWindow = !this.boolDisplayWindow;
@@ -87,6 +82,8 @@ namespace SXLWrench
         {
             if (this.boolDisplayWindow)
             {
+                ToolBox.returnBoardData();
+                frameSinceStart = EntryPointMain.newFrames.frameNumber;
                 //Main window
                 GUI.backgroundColor = Color.black;
                 this.DWDisplay = GUI.Window(313376377, new Rect((float)numX, (float)numY, (float)numW, (float)numH), new GUI.WindowFunction(this.guiWindowFunction), "SXLWrench");
