@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Security.Cryptography;
 using System.Threading.Tasks;
 using SkaterXL;
 using SkaterXL.Core;
@@ -25,6 +26,8 @@ namespace SXLWrench
         private static bool fpSwitch = false;
         private static string debugFile_dtCurrentPath = "";
         private static string debugFile_dtCurrentFile;
+        public static string clipID;
+        
         public static void returnBoardData()
         {
             int ifZero(int value)
@@ -60,9 +63,10 @@ namespace SXLWrench
             BoardV3Position = BoardOBJ.transform.position;
             BoardQ = BoardOBJ.transform.rotation;
             BoardV3Rotation = BoardQ.eulerAngles;
-            EntryPointMain.modGUI.data6Dboardxrot = ifZero(Mathf.RoundToInt(BoardV3Rotation.x));
-            EntryPointMain.modGUI.data6Dboardyrot = ifZero(Mathf.RoundToInt(BoardV3Rotation.y));
-            EntryPointMain.modGUI.data6Dboardzrot = ifZero(Mathf.RoundToInt(BoardV3Rotation.z));
+            //no rounding example ifZero(Mathf.RoundToInt(BoardV3Rotation.x))
+            EntryPointMain.modGUI.data6Dboardxrot = BoardV3Position.x;
+            EntryPointMain.modGUI.data6Dboardyrot = BoardV3Rotation.y;
+            EntryPointMain.modGUI.data6Dboardzrot = BoardV3Rotation.z;
             //Camera data calculations
 
             //float distance = Vector3.Distance(object1.transform.position, object2.transform.position);
@@ -71,7 +75,7 @@ namespace SXLWrench
             CameraQ = CameraOBJ.transform.rotation;
             CameraV3Rotation = CameraQ.eulerAngles;
             CamBoardDistF = Vector3.Distance(CameraOBJ.transform.position, BoardOBJ.transform.position);
-            EntryPointMain.modGUI.data6Ddistfromcamera = ifZero(Mathf.RoundToInt(CamBoardDistF));
+            EntryPointMain.modGUI.data6Ddistfromcamera = CamBoardDistF;
 
 
 
@@ -136,7 +140,8 @@ namespace SXLWrench
                     string newPathDT = newBasePath + @"\SXLWrenchFiles\deBugClip" + fileDTStamp;
                     System.IO.Directory.CreateDirectory(newPathDT);
                     debugFile_dtCurrentPath = newPathDT;
-                    debugFile_dtCurrentFile = debugFile_dtCurrentPath + @"\deBugClip" + fileDTStamp;
+                    debugFile_dtCurrentFile = debugFile_dtCurrentPath + @"\deBugClip" + fileDTStamp +".txt";
+                    clipID = resetHashStringID(newPathDT);
                 }
                 catch (Exception e)
                 {
@@ -155,6 +160,18 @@ namespace SXLWrench
             initTimeFile();
             AppendDebugFile("initCurrentStatus" + " " + @"new file\folder" + " " + debugFile_dtCurrentFile, true);
 
+        }
+        public static string resetHashStringID(string strword)
+        {
+                MD5 md5 = MD5.Create();
+                byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(strword);
+                byte[] hash = md5.ComputeHash(inputBytes);
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < hash.Length; i++)
+                {
+                    sb.Append(hash[i].ToString("x2"));
+                }
+                return sb.ToString();
         }
         //need constructor here for dt
         public static void AppendDebugFile()

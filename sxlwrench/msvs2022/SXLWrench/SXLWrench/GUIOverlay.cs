@@ -30,18 +30,29 @@ namespace SXLWrench
         public float data6Ddistfromcamera = 0;
         public float data6Dboardxpos = 0;
         public float data6Dboardypos = 0;
+        //Threaded base OBJ
+        public long frameSinceStart = 0;
         //Multi-Camera solution
         GameObject BaseOBJ = new GameObject();
         Camera cameraX;
-        private void spawnCameraFunction()
+        private void resetFrameCount()
         {
-            //SXLWrench.ToolBox.AppendDebugFile("Spawn Camera!", false);
+            /* SXLWrench.ToolBox.AppendDebugFile("Spawn Camera!", false);
             Camera.main.enabled = false;            
             BaseOBJ = GameObject.Find("New Master Prefab(Clone)");
             cameraX = BaseOBJ.AddComponent<Camera>();
             cameraX.enabled = true;
             cameraX.transform.position = new Vector3(0, 1.7F, 5);
             cameraX.transform.rotation = Quaternion.Euler(0, 327, 0);
+            */
+            try  {
+                EntryPointMain.newFrames.frameNumber = 0;
+            }
+            catch (Exception e)
+            {
+                return;
+            }
+            
 
 
         }
@@ -50,12 +61,14 @@ namespace SXLWrench
         {
             boolDisplayWindow = false;
             data6Ddt = ToolBox.cleanDTGroup(false);
-            clipID = clipID + clipIDnum.ToString();        
-        }
+            clipID = clipID + ToolBox.clipID;
+
+    }
         private void Update()
         {
             ToolBox.returnBoardData();
             psuedoframe++;
+            frameSinceStart = EntryPointMain.newFrames.frameNumber;
             if (Input.GetKeyDown(KeyCode.W))
             {
                 this.boolDisplayWindow = !this.boolDisplayWindow;
@@ -106,7 +119,9 @@ namespace SXLWrench
             //clipid
             GUILayout.Label(clipID, Array.Empty<GUILayoutOption>());
             //psuedoframe
-            GUILayout.Label("psuedoframe: " + psuedoframe.ToString(), Array.Empty<GUILayoutOption>());
+            //GUILayout.Label("psuedoframe: " + psuedoframe.ToString(), Array.Empty<GUILayoutOption>());
+            //frame
+            GUILayout.Label("Frame: " + frameSinceStart.ToString(), Array.Empty<GUILayoutOption>());
             //boardx rot
             GUILayout.Label("board.x R: " + data6Dboardxrot.ToString(), Array.Empty<GUILayoutOption>());
             //boardy rot
@@ -120,11 +135,10 @@ namespace SXLWrench
             //boardy pos
             GUILayout.Label("board 2d Y: " + data6Dboardypos.ToString(), Array.Empty<GUILayoutOption>());
             //spawn cam
-            /* if (GUILayout.Button("Spawn Camera!"))
+            if (GUILayout.Button("Reset Frames to 0"))
             {
-                spawnCameraFunction();
-
-            }*/
+                resetFrameCount();
+            }
         }
         public GUIOverlay()
         {

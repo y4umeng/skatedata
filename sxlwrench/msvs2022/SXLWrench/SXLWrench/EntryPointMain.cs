@@ -27,6 +27,8 @@ namespace SXLWrench
     {
         public static GUIOverlay modGUI;
         public static SetupOverlay setupOverlay;
+        public static SXLWrenchBaseOBJ newFrames;
+        
         static void Load()
         {
             //harmony
@@ -36,6 +38,13 @@ namespace SXLWrench
             //Rectangle box
             EntryPointMain.setupOverlay = new GameObject().AddComponent<SetupOverlay>();
             UnityEngine.Object.DontDestroyOnLoad(EntryPointMain.setupOverlay);
+            //Tools debug check
+            ToolBox.initCurrentStatus();
+            ToolBox.AppendDebugFile("Based Test!", true);
+            //Timer for frames
+            EntryPointMain.newFrames = new GameObject().AddComponent<SXLWrenchBaseOBJ>();
+            UnityEngine.Object.DontDestroyOnLoad(EntryPointMain.newFrames);
+
         }
         
     }

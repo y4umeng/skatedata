@@ -1,29 +1,48 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 namespace SXLWrench
 {
-    internal class SXLWrenchBaseOBJ
+    public class SXLWrenchBaseOBJ : MonoBehaviour
     {
-        string fileDTStamp = "";
-        bool fpSwitch = false;
-        string debugFile_dtCurrentPath = "";
-        string debugFile_dtCurrentFile = "";
+        public float timerTime = 0.0f;
+        public long frameNumber = 0;
+        public float frameRate = 30.0f;
+        public void Awake()
+        {
+            ToolBox.AppendDebugFile("Frame Rate set to: " + frameRate.ToString(), true);
+            frameRate = (1 / frameRate);
+            ToolBox.AppendDebugFile("Frame Rate Value delaTime: " + frameRate.ToString(), true);
 
-        public void setfileDTStamp()
-        {
-            fileDTStamp = "DT"; 
-            ToolBox.AppendDebugFile("--- SXLWrenchBase ---", true); 
-            Thread thread = new Thread(new ThreadStart(Worker)); 
-            thread.Start(); ToolBox.AppendDebugFile("--- From DT Function ---", true);
         }
-        public void Worker()
+        public void Update()
         {
-            ToolBox.AppendDebugFile("--- Threaded Base ---", true);
+            //works too slow for pulling frame updates
         }
+        public void updateFrameValue()
+        {
+            //works no GameObject
+        }
+        public void FixedUpdate()
+        {
+            //ToolBox.AppendDebugFile(Time.deltaTime.ToString(), true);
+            timerTime += Time.deltaTime;
+            if ((timerTime + Time.deltaTime) >= frameRate)
+            {
+                ToolBox.AppendDebugFile(frameNumber.ToString(), true);
+                frameNumber += 1;
+                timerTime = 0.0f;
+            }
+        }
+
     }
+
 }

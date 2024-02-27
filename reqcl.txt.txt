@@ -1,0 +1,13 @@
+//read/write xml to recall previous setups
+
+//load/save buttons to select previous xmls
+
+//add/remove cameras
+//select active cameras
+//edit camera position rotation etc
+//edit camera tripod and tripod like effects
+//toggle switch for tripod or stationary
+
+//remote program to control all aspects
+//topdown view of somekind preferably showing raycasting 
+//multi page support
