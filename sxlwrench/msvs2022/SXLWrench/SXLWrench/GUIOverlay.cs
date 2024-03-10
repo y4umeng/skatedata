@@ -91,15 +91,14 @@ namespace SXLWrench
         {
             if (this.boolDisplayWindow)
             {
-                ToolBox.returnBoardData();
-                frameSinceStart = EntryPointMain.newFrames.frameNumber;
+                
+                
                 //Main window
                 GUI.backgroundColor = Color.black;
                 this.DWDisplay = GUI.Window(313376377, new Rect((float)numX, (float)numY, (float)numW, (float)numH), new GUI.WindowFunction(this.guiWindowFunction), "SXLWrench");
-                //Button
-                
+
                 //Black background
-                if (true)
+                if (false)
                 {
                     if (Event.current.type.Equals(EventType.Repaint))
                     {
@@ -109,6 +108,16 @@ namespace SXLWrench
                 }
             }
         }
+        private void FixedUpdate()
+        {
+            if (this.boolDisplayWindow)
+            {
+                
+                frameSinceStart = EntryPointMain.newFrames.frameNumber;
+                ToolBox.returnBoardData();
+            }
+
+            }
         private void guiWindowFunction(int windowID)
         {
             //dtstamp
