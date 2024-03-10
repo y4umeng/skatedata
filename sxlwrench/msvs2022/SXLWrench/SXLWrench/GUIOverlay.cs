@@ -60,8 +60,17 @@ namespace SXLWrench
             boolDisplayWindow = false;
             data6Ddt = ToolBox.cleanDTGroup(false);
             clipID = clipID + ToolBox.clipID;
+            //Initialize black background
+            bBGT2D = new Texture2D(128, 128);
+            for (int i = 0; i < 128; i++)
+            {
+                for (int i2 = 0; i2 < 128; i2++)
+                {
+                    bBGT2D.SetPixel(i, i2, boxColor);
+                }
+            }
 
-    }
+        }
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.W))
@@ -92,15 +101,6 @@ namespace SXLWrench
                 //Black background
                 if (true)
                 {
-                    Texture bBGT;
-                    Texture2D bBGT2D = new Texture2D(128, 128);
-                    for (int i = 0; i < 128; i++)
-                    {
-                        for (int i2 = 0; i2 < 128; i2++)
-                        {
-                            bBGT2D.SetPixel(i, i2, boxColor);
-                        }
-                    }
                     if (Event.current.type.Equals(EventType.Repaint))
                     {
                         bBGT2D.Apply();
@@ -140,5 +140,6 @@ namespace SXLWrench
         public GUIOverlay()
         {
         }
+        Texture2D bBGT2D;
     }
 }
