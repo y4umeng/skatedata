@@ -112,3 +112,11 @@ C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\obj\Debug\SXLWrench.csproj.CopyComplete
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\obj\Debug\SXLWrench.dll
 C:\Users\mybad\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\obj\Debug\SXLWrench.pdb
+C:\Users\mybad\OneDrive\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\SXLWrench.dll
+C:\Users\mybad\OneDrive\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\SXLWrench.pdb
+C:\Users\mybad\OneDrive\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\bin\Debug\Newtonsoft.Json.dll
+C:\Users\mybad\OneDrive\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\obj\Debug\SXLWrench.csproj.AssemblyReference.cache
+C:\Users\mybad\OneDrive\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\obj\Debug\SXLWrench.csproj.CoreCompileInputs.cache
+C:\Users\mybad\OneDrive\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\obj\Debug\SXLWrench.csproj.Up2Date
+C:\Users\mybad\OneDrive\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\obj\Debug\SXLWrench.dll
+C:\Users\mybad\OneDrive\Documents\GitHub\skatedata\sxlwrench\msvs2022\SXLWrench\SXLWrench\obj\Debug\SXLWrench.pdb
