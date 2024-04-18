@@ -141,12 +141,13 @@ namespace SXLWrench
                 try
                 {
                     fileDTStamp = cleanDTGroup(true);
+                    clipID = resetHashStringID(fileDTStamp);
                     string newBasePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                    string newPathDT = newBasePath + @"\SXLWrenchFiles\deBugClip" + fileDTStamp;
+                    string newPathDT = newBasePath + @"\SXLWrenchFiles\deBugClip" + clipID;
                     System.IO.Directory.CreateDirectory(newPathDT);
                     debugFile_dtCurrentPath = newPathDT;
                     debugFile_dtCurrentFile = debugFile_dtCurrentPath + @"\deBugClip" + fileDTStamp +".txt";
-                    clipID = resetHashStringID(newPathDT);
+                    
                 }
                 catch (Exception e)
                 {
@@ -172,7 +173,7 @@ namespace SXLWrench
                 byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(strword);
                 byte[] hash = md5.ComputeHash(inputBytes);
                 StringBuilder sb = new StringBuilder();
-                for (int i = 0; i < hash.Length; i++)
+                for (int i = 0; i < 3; i++)
                 {
                     sb.Append(hash[i].ToString("x2"));
                 }

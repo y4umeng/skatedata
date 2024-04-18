@@ -50,8 +50,8 @@ namespace SXLWrench
                     return 480;
                 }
             }
-            numW = screenRestraintW((Screen.width / 3)); //should not be less that 640
-            numH = screenRestraintH((int)(Screen.height / 2.25)); //should not be less than 480
+            numW = screenRestraintW((int)(Screen.width / 2.6)); //should not be less that 640     3
+            numH = screenRestraintH((int)(Screen.height / 2)); //should not be less than 480     2.25
             numX = ((Screen.width / 2) - (numW / 2)); // = 1/2Screen.width-1/2 rect width
             numY = ((Screen.height / 2) - (numH / 2)); // = 1/2Screen.height-1/2 rect height
             //Box640480 = new Rect((float)numX, (float)numY, (float)numW, (float)numH);

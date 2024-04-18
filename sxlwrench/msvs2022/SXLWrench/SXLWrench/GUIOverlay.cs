@@ -13,8 +13,8 @@ namespace SXLWrench
         //GUI variables
         public bool boolDisplayWindow;
         private Rect DWDisplay;
-        int numW = 600;
-        int numH = 300;
+        int numW = 300;
+        int numH = 750;
         int numX = 0;
         int numY = 0;
         //GUI box variables
@@ -91,14 +91,8 @@ namespace SXLWrench
         {
             if (this.boolDisplayWindow)
             {
-                
-                
-                //Main window
-                GUI.backgroundColor = Color.black;
-                this.DWDisplay = GUI.Window(313376377, new Rect((float)numX, (float)numY, (float)numW, (float)numH), new GUI.WindowFunction(this.guiWindowFunction), "SXLWrench");
-
                 //Black background
-                if (false)
+                if (true)
                 {
                     if (Event.current.type.Equals(EventType.Repaint))
                     {
@@ -106,6 +100,12 @@ namespace SXLWrench
                         Graphics.DrawTexture(new Rect(numX, numY, numW, numH), bBGT2D);
                     }
                 }
+                //Main window
+                GUI.backgroundColor = Color.black;
+                GUI.skin.label.fontSize = 30;
+                this.DWDisplay = GUI.Window(313376377, new Rect((float)numX, (float)numY, (float)numW, (float)numH), new GUI.WindowFunction(this.guiWindowFunction), "SXLWrench");
+
+            
             }
         }
         private void FixedUpdate()
@@ -121,25 +121,25 @@ namespace SXLWrench
         private void guiWindowFunction(int windowID)
         {
             //dtstamp
-            GUILayout.Label(data6Ddt, Array.Empty<GUILayoutOption>());
+            //GUILayout.Label(data6Ddt, Array.Empty<GUILayoutOption>());
             //clipid
             GUILayout.Label(clipID, Array.Empty<GUILayoutOption>());
             //psuedoframe
             //GUILayout.Label("psuedoframe: " + psuedoframe.ToString(), Array.Empty<GUILayoutOption>());
             //frame
-            GUILayout.Label("Frame: " + frameSinceStart.ToString(), Array.Empty<GUILayoutOption>());
+            GUILayout.Label(frameSinceStart.ToString(), Array.Empty<GUILayoutOption>());
             //boardx rot
-            GUILayout.Label("board.x R: " + data6Dboardxrot.ToString(), Array.Empty<GUILayoutOption>());
+            GUILayout.Label(data6Dboardxrot.ToString(), Array.Empty<GUILayoutOption>());
             //boardy rot
-            GUILayout.Label("board.y R: " + data6Dboardyrot.ToString(), Array.Empty<GUILayoutOption>());
+            GUILayout.Label(data6Dboardyrot.ToString(), Array.Empty<GUILayoutOption>());
             //boardz rot
-            GUILayout.Label("board.z R: " + data6Dboardzrot.ToString(), Array.Empty<GUILayoutOption>());
+            GUILayout.Label(data6Dboardzrot.ToString(), Array.Empty<GUILayoutOption>());
             //d from cam
-            GUILayout.Label("d from cam: " + data6Ddistfromcamera.ToString(), Array.Empty<GUILayoutOption>());
+            GUILayout.Label(data6Ddistfromcamera.ToString(), Array.Empty<GUILayoutOption>());
             //boardx pos
-            GUILayout.Label("board 2d X: " + data6Dboardxpos.ToString(), Array.Empty<GUILayoutOption>());
+            GUILayout.Label(data6Dboardxpos.ToString(), Array.Empty<GUILayoutOption>());
             //boardy pos
-            GUILayout.Label("board 2d Y: " + data6Dboardypos.ToString(), Array.Empty<GUILayoutOption>());
+            GUILayout.Label(data6Dboardypos.ToString(), Array.Empty<GUILayoutOption>());
             //spawn cam
             if (GUILayout.Button("Reset Frames to 0"))
             {
