@@ -65,9 +65,10 @@ namespace SXLWrench
             BoardV3Rotation = BoardQ.eulerAngles;
             //no rounding example ifZero(Mathf.RoundToInt(BoardV3Rotation.x))
             EntryPointMain.modGUI.data6Dboardxrot = BoardV3Rotation.x; //impossible
-            EntryPointMain.modGUI.data6Dboardyrot = BoardV3Rotation.y; //flat
+            //EntryPointMain.modGUI.data6Dboardyrot = BoardV3Rotation.y; //flat
             EntryPointMain.modGUI.data6Dboardzrot = BoardV3Rotation.z; //roll
-            //Camera data calculations
+            
+
 
             //float distance = Vector3.Distance(object1.transform.position, object2.transform.position);
             CameraOBJ = GameObject.Find("Main Camera");
@@ -86,11 +87,16 @@ namespace SXLWrench
             float board2DPOSy = boardSSPOS.y;
             EntryPointMain.modGUI.data6Dboardxpos = board2DPOSx;
             EntryPointMain.modGUI.data6Dboardypos = board2DPOSy;
-            //
 
             //--------- Adjusted angle to camera ---------
+            // Camera Y adjusted
+            Vector3 t3 = BoardOBJ.transform.InverseTransformPoint(CameraOBJ.transform.position);
+            float tI = Mathf.Atan2(t3.x, t3.z) * Mathf.Rad2Deg;
+            EntryPointMain.modGUI.data6Dboardyrot = tI;
 
-            // vector rotation
+
+
+
 
 
 

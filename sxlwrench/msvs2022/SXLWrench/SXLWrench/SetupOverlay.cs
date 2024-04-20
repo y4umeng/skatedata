@@ -76,7 +76,7 @@ namespace SXLWrench
                 }
             }
             //Rectangle subroutine
-            if (true)
+            if (false)
             {
                 for (int i = 0; i < numW; i++)
                 {//x
@@ -110,7 +110,7 @@ namespace SXLWrench
                 //inner window 2
                 //GUI.Box(new Rect(numX, numY, numW, numH), "This is a box");
                 
-                if (true)
+                if (false)
                 {
                     if (Event.current.type.Equals(EventType.Repaint))
                     {
@@ -122,7 +122,7 @@ namespace SXLWrench
         }
         private void guiWindowFunction(int windowID)
         {
-            GUI.DragWindow(new Rect(0, 0, 10000, 10000));
+            //GUI.DragWindow(new Rect(0, 0, 10000, 10000));
         }
         public SetupOverlay()
         {
