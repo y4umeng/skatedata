@@ -21,7 +21,7 @@ namespace SXLWrench
         Color boxColor = new Color(0, 0, 0, 1);
         //6D data of various types declared and defined with default values
         private string data6Ddt = string.Empty;
-        private string clipID = "clipID: ";
+        private string clipID = "NYD";
         public float data6Dboardxrot = 0;
         public float data6Dboardyrot = 0;
         public float data6Dboardzrot = 0;
@@ -59,7 +59,7 @@ namespace SXLWrench
         {
             boolDisplayWindow = false;
             data6Ddt = ToolBox.cleanDTGroup(false);
-            clipID = clipID + ToolBox.clipID;
+            clipID = ToolBox.clipID;
             //Initialize black background
             bBGT2D = new Texture2D(128, 128);
             for (int i = 0; i < 128; i++)
