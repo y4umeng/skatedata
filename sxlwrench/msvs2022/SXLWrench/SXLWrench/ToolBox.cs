@@ -63,7 +63,7 @@ namespace SXLWrench
             BoardV3Position = BoardOBJ.transform.position;
             BoardQ = BoardOBJ.transform.rotation;
             BoardV3Rotation = BoardQ.eulerAngles;
-            int angularDataType = 0;
+            int angularDataType = 2;
 
             //float distance = Vector3.Distance(object1.transform.position, object2.transform.position);
             CameraOBJ = GameObject.Find("Main Camera");
@@ -103,18 +103,45 @@ namespace SXLWrench
                 //Adjusted angle for camera position test routine 1
 
                 //x routine
-                Vector3 t3 = BoardOBJ.transform.InverseTransformPoint(CameraOBJ.transform.position);
-                float tI = Mathf.Atan2(t3.y, t3.x) * Mathf.Rad2Deg;
-                EntryPointMain.modGUI.data6Dboardyrot = tI;
+                EntryPointMain.modGUI.data6Dboardxrot = BoardV3Rotation.x; // impossible axis
 
                 //y routine
-                EntryPointMain.modGUI.data6Dboardyrot = BoardV3Rotation.y; //flat
-
-
+                double moneY, moneyT, moneyO;
+                double val1 = (CameraV3Position.z - BoardV3Position.z);
+                double val2 = (CameraV3Position.x - BoardV3Position.x);
+                moneY = Mathf.Atan2((float) val1,(float) val2);
+                moneY = moneY * (180 / Math.PI);
+                moneY = moneY + 180;
+                EntryPointMain.modGUI.data6Dboardyrot = (float) moneY;
+                moneyT = BoardV3Rotation.y;
+                moneyT += 90;
+                if (moneyT > 360)
+                {
+                    moneyT = moneyT % 360;
+                    
+                }
+                moneyT -= 360;
+                moneyT = moneyT * -1;
+                //determine difference and normalize
+                moneyO = moneY - moneyT;
+                if (moneyO < 0) {
+                }
+                
+                
+                EntryPointMain.modGUI.data6Dboardyrot = (float) moneY; // flip axis
+                // shuvit axis
                 //z routine
-                EntryPointMain.modGUI.data6Dboardzrot = BoardV3Rotation.z; //roll
+                EntryPointMain.modGUI.data6Dboardzrot = BoardV3Rotation.z; // flip axis
 
             }
+        }
+        private static Vector2 atan2PrepF()
+        {
+            Vector2 money;
+            float val1 = 0;
+            float val2 = 0;
+            money = new Vector2(val1, val2); //y,x
+            return money;
         }
         public static string cleanDTGroup(bool yon)
         {
