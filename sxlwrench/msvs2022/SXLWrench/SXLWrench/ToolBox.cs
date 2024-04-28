@@ -63,12 +63,7 @@ namespace SXLWrench
             BoardV3Position = BoardOBJ.transform.position;
             BoardQ = BoardOBJ.transform.rotation;
             BoardV3Rotation = BoardQ.eulerAngles;
-            //no rounding example ifZero(Mathf.RoundToInt(BoardV3Rotation.x))
-            EntryPointMain.modGUI.data6Dboardxrot = BoardV3Rotation.x; //impossible
-            //EntryPointMain.modGUI.data6Dboardyrot = BoardV3Rotation.y; //flat
-            EntryPointMain.modGUI.data6Dboardzrot = BoardV3Rotation.z; //roll
-            
-
+            int angularDataType = 0;
 
             //float distance = Vector3.Distance(object1.transform.position, object2.transform.position);
             CameraOBJ = GameObject.Find("Main Camera");
@@ -88,18 +83,38 @@ namespace SXLWrench
             EntryPointMain.modGUI.data6Dboardxpos = board2DPOSx;
             EntryPointMain.modGUI.data6Dboardypos = board2DPOSy;
 
-            //--------- Adjusted angle to camera ---------
-            // Camera Y adjusted
-            Vector3 t3 = BoardOBJ.transform.InverseTransformPoint(CameraOBJ.transform.position);
-            float tI = Mathf.Atan2(t3.x, t3.z) * Mathf.Rad2Deg;
-            EntryPointMain.modGUI.data6Dboardyrot = tI;
+            if (angularDataType == 0)
+            {
+                //rounded skateboard data
+                EntryPointMain.modGUI.data6Dboardxrot = ifZero(Mathf.RoundToInt(BoardV3Rotation.x)); //impossible
+                EntryPointMain.modGUI.data6Dboardyrot = ifZero(Mathf.RoundToInt(BoardV3Rotation.y)); //flat
+                EntryPointMain.modGUI.data6Dboardzrot = ifZero(Mathf.RoundToInt(BoardV3Rotation.z)); //roll
 
 
+            } else if (angularDataType == 1)
+            {
+                //not rounded skateboard data
+                EntryPointMain.modGUI.data6Dboardxrot = BoardV3Rotation.x; //impossible
+                EntryPointMain.modGUI.data6Dboardyrot = BoardV3Rotation.y; //flat
+                EntryPointMain.modGUI.data6Dboardzrot = BoardV3Rotation.z; //roll
+
+            } else if (angularDataType == 2)
+            {
+                //Adjusted angle for camera position test routine 1
+
+                //x routine
+                Vector3 t3 = BoardOBJ.transform.InverseTransformPoint(CameraOBJ.transform.position);
+                float tI = Mathf.Atan2(t3.y, t3.x) * Mathf.Rad2Deg;
+                EntryPointMain.modGUI.data6Dboardyrot = tI;
+
+                //y routine
+                EntryPointMain.modGUI.data6Dboardyrot = BoardV3Rotation.y; //flat
 
 
+                //z routine
+                EntryPointMain.modGUI.data6Dboardzrot = BoardV3Rotation.z; //roll
 
-
-
+            }
         }
         public static string cleanDTGroup(bool yon)
         {

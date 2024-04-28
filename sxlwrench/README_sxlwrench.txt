@@ -3,6 +3,18 @@ this space is reserved for instructions as of February 11th 2024
 
 SXLWrench is the name of this tool (WIP) to extrapolate angular data from SkaterXL gameplay
 
+Order of data on screen (updated April 27, 2024)
+
+0.) clip id
+1.) frame since loaded (or reset)
+2.) skateboard x axix rotation (length)
+3.) skateboard y axis rotation (height)
+4.) skateboard z axis rotation (width)
+5.) meters camera center point is from skateboard center point
+6.) screen space x position of skateboard center point (ref bottom left corner 0,0)
+7.) screen space y position of skateboard center point (ref bottom left corner 0,0)
+
+
 
 Installation Instructions:
 1.) Copy or fork "SXLWrenchMod_v1.0.0_for_SkaterXL_1.2.7.8" folder to your Documents folder
