@@ -105,8 +105,8 @@ namespace SXLWrench
                 //X ROUTINE IMPOSSIBLE AXIS
                 double moneYb, moneyTb, moneyOb;
                 moneyOb = 0;
-                double val1b = (CameraV3Position.y - BoardV3Position.y);
-                double val2b = (CameraV3Position.x - BoardV3Position.x);
+                double val1b = (CameraV3Position.z - BoardV3Position.z);
+                double val2b = (CameraV3Position.y - BoardV3Position.y);
                 moneYb = Mathf.Atan2((float)val1b, (float)val2b);
                 moneYb = moneYb * (180 / Math.PI);
                 moneYb = moneYb + 180;
@@ -162,12 +162,41 @@ namespace SXLWrench
                         moneyO = moneyO % 360;
                     }
                 }
-                EntryPointMain.modGUI.data6Dboardyrot = (float) moneyO; 
-                
-                //Z ROUTINE FLIP AXIS
+                EntryPointMain.modGUI.data6Dboardyrot = (float) moneyO;
 
-                
-                
+                //Z ROUTINE FLIP AXIS
+                double moneYc, moneyTc, moneyOc;
+                moneyOc = 0;
+                double val1c = (CameraV3Position.y - BoardV3Position.y);
+                double val2c = (CameraV3Position.x - BoardV3Position.x);
+                moneYc = Mathf.Atan2((float)val1c, (float)val2c);
+                moneYc = moneYc * (180 / Math.PI);
+                moneYc = moneYc + 180;
+                moneyTc = BoardV3Rotation.z;
+                moneyTc += 90;
+                if (moneyTc > 360)
+                {
+                    moneyTc = moneyTc % 360;
+                }
+                moneyTc -= 360;
+                moneyTc = moneyTc * -1;
+                //determine difference and normalize
+                if (moneYc == moneyTc)
+                {
+                    moneyOc = 0;
+                }
+                else
+                {
+                    moneyOc = ((360 + moneYc) - moneyTc);
+                    if (moneyOc > 360)
+                    {
+                        moneyOc = moneyOc % 360;
+                    }
+                }
+                EntryPointMain.modGUI.data6Dboardzrot = (float)moneyOc;
+
+
+
 
             }
         }
