@@ -102,36 +102,72 @@ namespace SXLWrench
             {
                 //Adjusted angle for camera position test routine 1
 
-                //x routine
-                EntryPointMain.modGUI.data6Dboardxrot = BoardV3Rotation.x; // impossible axis
+                //X ROUTINE IMPOSSIBLE AXIS
+                double moneYb, moneyTb, moneyOb;
+                moneyOb = 0;
+                double val1b = (CameraV3Position.y - BoardV3Position.y);
+                double val2b = (CameraV3Position.x - BoardV3Position.x);
+                moneYb = Mathf.Atan2((float)val1b, (float)val2b);
+                moneYb = moneYb * (180 / Math.PI);
+                moneYb = moneYb + 180;
+                moneyTb = BoardV3Rotation.x;
+                moneyTb += 90;
+                if (moneyTb > 360)
+                {
+                    moneyTb = moneyTb % 360;
+                }
+                moneyTb -= 360;
+                moneyTb = moneyTb * -1;
+                //determine difference and normalize
+                if (moneYb == moneyTb)
+                {
+                    moneyOb = 0;
+                }
+                else
+                {
+                    moneyOb = ((360 + moneYb) - moneyTb);
+                    if (moneyOb > 360)
+                    {
+                        moneyOb = moneyOb % 360;
+                    }
+                }
+                EntryPointMain.modGUI.data6Dboardxrot = (float)moneyOb;
 
-                //y routine
+
+                //Y ROUTINE SHUVIT AXIS
                 double moneY, moneyT, moneyO;
+                moneyO = 0;
                 double val1 = (CameraV3Position.z - BoardV3Position.z);
                 double val2 = (CameraV3Position.x - BoardV3Position.x);
                 moneY = Mathf.Atan2((float) val1,(float) val2);
                 moneY = moneY * (180 / Math.PI);
                 moneY = moneY + 180;
-                EntryPointMain.modGUI.data6Dboardyrot = (float) moneY;
                 moneyT = BoardV3Rotation.y;
                 moneyT += 90;
                 if (moneyT > 360)
                 {
                     moneyT = moneyT % 360;
-                    
                 }
                 moneyT -= 360;
                 moneyT = moneyT * -1;
                 //determine difference and normalize
-                moneyO = moneY - moneyT;
-                if (moneyO < 0) {
+                if (moneY == moneyT)
+                {
+                    moneyO = 0;
+                } else
+                {
+                    moneyO = ((360 + moneY) - moneyT);
+                    if (moneyO > 360)
+                    {
+                        moneyO = moneyO % 360;
+                    }
                 }
+                EntryPointMain.modGUI.data6Dboardyrot = (float) moneyO; 
+                
+                //Z ROUTINE FLIP AXIS
+
                 
                 
-                EntryPointMain.modGUI.data6Dboardyrot = (float) moneY; // flip axis
-                // shuvit axis
-                //z routine
-                EntryPointMain.modGUI.data6Dboardzrot = BoardV3Rotation.z; // flip axis
 
             }
         }
