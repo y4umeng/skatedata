@@ -65,6 +65,8 @@ namespace SXLWrench
             BoardV3Rotation = BoardQ.eulerAngles;
             int angularDataType = 2;
 
+
+            //skateboard rel distance from camera
             //float distance = Vector3.Distance(object1.transform.position, object2.transform.position);
             CameraOBJ = GameObject.Find("Main Camera");
             CameraV3Position = CameraOBJ.transform.position;
@@ -72,8 +74,6 @@ namespace SXLWrench
             CameraV3Rotation = CameraQ.eulerAngles;
             CamBoardDistF = Vector3.Distance(CameraOBJ.transform.position, BoardOBJ.transform.position);
             EntryPointMain.modGUI.data6Ddistfromcamera = CamBoardDistF;
-
-
 
             //Player.skateboard 2D position data
             Camera igCam = CameraOBJ.GetComponent<Camera>();
@@ -93,10 +93,23 @@ namespace SXLWrench
 
             } else if (angularDataType == 1)
             {
-                //not rounded skateboard data
+                //not rounded skateboard and camera data
+                //camera data
+                EntryPointMain.modGUI.data6DCameraGlobXPos = CameraV3Position.x;
+                EntryPointMain.modGUI.data6DCameraGlobYPos = CameraV3Position.y;
+                EntryPointMain.modGUI.data6DCameraGlobZPos = CameraV3Position.z;
+                EntryPointMain.modGUI.data6DCameraXrot = CameraV3Rotation.x;
+                EntryPointMain.modGUI.data6DCameraYrot = CameraV3Rotation.y;
+                EntryPointMain.modGUI.data6DCameraZrot = CameraV3Rotation.z;
+
+                //skateboard data
+                EntryPointMain.modGUI.data6DboardGlobXPos = BoardV3Position.x;
+                EntryPointMain.modGUI.data6DboardGlobYPos = BoardV3Position.y;
+                EntryPointMain.modGUI.data6DboardGlobZPos = BoardV3Position.z;
                 EntryPointMain.modGUI.data6Dboardxrot = BoardV3Rotation.x; //impossible
                 EntryPointMain.modGUI.data6Dboardyrot = BoardV3Rotation.y; //flat
                 EntryPointMain.modGUI.data6Dboardzrot = BoardV3Rotation.z; //roll
+
 
             } else if (angularDataType == 2)
             {

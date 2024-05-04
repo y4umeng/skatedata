@@ -22,12 +22,26 @@ namespace SXLWrench
         //6D data of various types declared and defined with default values
         private string data6Ddt = string.Empty;
         private string clipID = "NYD";
+        //Board rel cam data
+        public float data6Dboardxpos = 0;
+        public float data6Dboardypos = 0;
+        public float data6Ddistfromcamera = 0;
+        //Camera data
+        public float data6DCameraGlobXPos = 0;
+        public float data6DCameraGlobYPos = 0;
+        public float data6DCameraGlobZPos = 0;
+        public float data6DCameraXrot = 0;
+        public float data6DCameraYrot = 0;
+        public float data6DCameraZrot = 0;
+        //Board data
+        public float data6DboardGlobXPos = 0;
+        public float data6DboardGlobYPos = 0;
+        public float data6DboardGlobZPos = 0;
         public float data6Dboardxrot = 0;
         public float data6Dboardyrot = 0;
         public float data6Dboardzrot = 0;
-        public float data6Ddistfromcamera = 0;
-        public float data6Dboardxpos = 0;
-        public float data6Dboardypos = 0;
+        
+        
         //Threaded base OBJ
         public long frameSinceStart = 0;
         //Multi-Camera solution
@@ -120,27 +134,53 @@ namespace SXLWrench
             }
         private void guiWindowFunction(int windowID)
         {
-            //dtstamp
-            //GUILayout.Label(data6Ddt, Array.Empty<GUILayoutOption>());
-            //clipid
-            GUILayout.Label(clipID, Array.Empty<GUILayoutOption>());
-            //psuedoframe
-            //GUILayout.Label("psuedoframe: " + psuedoframe.ToString(), Array.Empty<GUILayoutOption>());
-            //frame
-            GUILayout.Label(frameSinceStart.ToString(), Array.Empty<GUILayoutOption>());
-            //boardx rot
-            GUILayout.Label(data6Dboardxrot.ToString(), Array.Empty<GUILayoutOption>());
-            //boardy rot
-            GUILayout.Label(data6Dboardyrot.ToString(), Array.Empty<GUILayoutOption>());
-            //boardz rot
-            GUILayout.Label(data6Dboardzrot.ToString(), Array.Empty<GUILayoutOption>());
-            //d from cam
-            GUILayout.Label(data6Ddistfromcamera.ToString(), Array.Empty<GUILayoutOption>());
-            //boardx pos
-            GUILayout.Label(data6Dboardxpos.ToString(), Array.Empty<GUILayoutOption>());
-            //boardy pos
-            GUILayout.Label(data6Dboardypos.ToString(), Array.Empty<GUILayoutOption>());
-            //spawn cam
+            if (false)
+            {
+                //dtstamp
+                //GUILayout.Label(data6Ddt, Array.Empty<GUILayoutOption>());
+                //clipid
+                GUILayout.Label(clipID, Array.Empty<GUILayoutOption>());
+                //psuedoframe
+                //GUILayout.Label("psuedoframe: " + psuedoframe.ToString(), Array.Empty<GUILayoutOption>());
+                //frame
+                GUILayout.Label(frameSinceStart.ToString(), Array.Empty<GUILayoutOption>());
+                //boardx rot
+                GUILayout.Label(data6Dboardxrot.ToString(), Array.Empty<GUILayoutOption>());
+                //boardy rot
+                GUILayout.Label(data6Dboardyrot.ToString(), Array.Empty<GUILayoutOption>());
+                //boardz rot
+                GUILayout.Label(data6Dboardzrot.ToString(), Array.Empty<GUILayoutOption>());
+                //d from cam
+                GUILayout.Label(data6Ddistfromcamera.ToString(), Array.Empty<GUILayoutOption>());
+                //boardx pos
+                GUILayout.Label(data6Dboardxpos.ToString(), Array.Empty<GUILayoutOption>());
+                //boardy pos
+                GUILayout.Label(data6Dboardypos.ToString(), Array.Empty<GUILayoutOption>());
+                //spawn cam
+            }
+            if (true)
+            {
+                GUILayout.Label(clipID, Array.Empty<GUILayoutOption>());
+                GUILayout.Label(frameSinceStart.ToString(), Array.Empty<GUILayoutOption>());
+                //board rel cam data
+                GUILayout.Label(data6Dboardxpos.ToString(), Array.Empty<GUILayoutOption>());
+                GUILayout.Label(data6Dboardypos.ToString(), Array.Empty<GUILayoutOption>());
+                GUILayout.Label(data6Ddistfromcamera.ToString(), Array.Empty<GUILayoutOption>());
+                //camera data
+                GUILayout.Label(data6DCameraGlobXPos.ToString(), Array.Empty<GUILayoutOption>());
+                GUILayout.Label(data6DCameraGlobYPos.ToString(), Array.Empty<GUILayoutOption>());
+                GUILayout.Label(data6DCameraGlobZPos.ToString(), Array.Empty<GUILayoutOption>());
+                GUILayout.Label(data6DCameraXrot.ToString(), Array.Empty<GUILayoutOption>());
+                GUILayout.Label(data6DCameraYrot.ToString(), Array.Empty<GUILayoutOption>());
+                GUILayout.Label(data6DCameraZrot.ToString(), Array.Empty<GUILayoutOption>());
+                //board data
+                GUILayout.Label(data6DboardGlobXPos.ToString(), Array.Empty<GUILayoutOption>());
+                GUILayout.Label(data6DboardGlobYPos.ToString(), Array.Empty<GUILayoutOption>());
+                GUILayout.Label(data6DboardGlobZPos.ToString(), Array.Empty<GUILayoutOption>());
+                GUILayout.Label(data6Dboardxrot.ToString(), Array.Empty<GUILayoutOption>());
+                GUILayout.Label(data6Dboardyrot.ToString(), Array.Empty<GUILayoutOption>());
+                GUILayout.Label(data6Dboardzrot.ToString(), Array.Empty<GUILayoutOption>());
+            }
             if (GUILayout.Button("Reset Frames to 0"))
             {
                 resetFrameCount();
