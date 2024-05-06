@@ -63,7 +63,7 @@ namespace SXLWrench
             BoardV3Position = BoardOBJ.transform.position;
             BoardQ = BoardOBJ.transform.rotation;
             BoardV3Rotation = BoardQ.eulerAngles;
-            int angularDataType = 2;
+            int angularDataType = 1;
 
 
             //skateboard rel distance from camera
